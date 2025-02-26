@@ -1,62 +1,189 @@
-import React from "react";
+import * as RouterDom from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SideMenu = ({ isOpen, onClose }) => {
-  return (
-    <div style={{ 
-      ...styles.sideMenu, 
-      transform: isOpen ? "translateX(0)" : "translateX(-100%)" 
-    }}>
-      {/* Close Button (Always Visible) */}
-      <div style={styles.closeButton} onClick={onClose}>
-        ✖
-      </div>
+  const [openSections, setOpenSections] = useState({});
 
-      {/* 🔥 Side Menu Header */}
+  const toggleSection = (section) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+
+  return (
+    <div
+      style={{
+        ...styles.sideMenu,
+        transform: isOpen ? "translateX(0)" : "translateX(-100%)",
+      }}
+    >
+      <div style={styles.closeButton} onClick={onClose}>✖</div>
       <div style={styles.header}>
         <h2> 👨🏻 Hello, Sign In</h2>
       </div>
-
-      {/* 🔥 Amazon-Style Menu Sections */}
+      
       <MenuSection title="Trending">
-        <MenuItem text="Best Sellers" link="/bestsellers" />
-        <MenuItem text="Trending Products" link="/trending-products" />
-        <MenuItem text="New Arrival" link="/new-arrivals" />
-        <MenuItem text="Back in Stocks" link="/back-in-stock" />
-        <MenuItem text="Offers and Discounts" link="/offers-discounts" />
+      <ExpandableMenu title="Best Sellers ✨" isOpen={openSections.sellers} toggle={() => toggleSection("sellers")}>
+        <MenuItem text="Top Rated by Customers ⭐⭐⭐" link="/Top-Customers" />
+        <MenuItem text="All-Time Best Sellers 🏆" link="/all-Time-Best-Sellers 🏆" />
+        <MenuItem text="Staff Picks 🏅 " link="/staff-Picks 🏅 " />
+        <MenuItem text="Exclusive Online Offers 💻  " link="/exclusive 🏅 " />
+        </ExpandableMenu>
+          <ExpandableMenu title="Trending Products" isOpen={openSections.products} toggle={() => toggleSection("products")}>
+          <MenuItem text="Flash Deals ⏳" link="/flash-Deals ⏳ " />
+          <MenuItem text="Bundle Offers 🎁 " link="/bundle-offers" />
+          <MenuItem text="Clearance Sale 🏷️ " link="/clearance-Sale 🏷️ " />
+          </ExpandableMenu>
+          <ExpandableMenu title="New Arrivals" isOpen={openSections.arrivals} toggle={() => toggleSection("arrivals")}>
+          <MenuItem text="Handmade & Custom Creations 🎨" link="/handmade-&-Custom Creations 🎨 " />
+          <MenuItem text="Most Sold Items 🔥  " link="/most-Sold-Items 🔥 " />
+          <MenuItem text="Influencer Picks 🌟 " link="/influencer-Picks 🌟 " />
+          <MenuItem text="Back in Stock ⏳ " link="/back-in-Stock ⏳ " />
+          </ExpandableMenu>
+          <ExpandableMenu title="Customer Reviews" isOpen={openSections.reviews} toggle={() => toggleSection("reviews")}>
+
+      
+        <MenuItem text="Top-Rated Products ⭐" link="/Top-Rated-Products ⭐ " />
+          <MenuItem text="Verified Customer Testimonials 🗣️  " link="/verified-Customer-Testimonials " />
+          <MenuItem text="Before & After Comparisons 📷  " link="/before-&-After-Comparisons " />
+          <MenuItem text="Exclusive Online Offers 💻  " link="/Exclusive-Online-Offers 💻 " />
+          </ExpandableMenu>
       </MenuSection>
 
+
+
       <MenuSection title="Shop">
-        <MenuItem text="Acrylic Accessories ✨" link="/acrylic-accessories" />
-        <MenuItem text="UV Printing Wall Art 🖼️" link="/uv-printing" />
-        <MenuItem text="Stationery ✏️" link="/stationery" />
-        <MenuItem text="Toys ⚠️" link="/toys" />
-        <MenuItem text="Flowers & Plants 🌿" link="/flowers-plants" />
+        <ExpandableMenu title="Acrylic Accessories ✨" isOpen={openSections.acrylic} toggle={() => toggleSection("acrylic")}>
+          <MenuItem text="Keychains" link="/acrylic-keychains" />
+          <MenuItem text="Wall Decor" link="/acrylic-wall-decor" />
+          <MenuItem text="Nameplates" link="/acrylic-nameplates" />
+          <MenuItem text="Wall Clocks" link="/acrylic-wall-clocks" />
+          </ExpandableMenu>
+ 
+          <ExpandableMenu title="UV Printing Wall Art 🎨" isOpen={openSections.UV} toggle={() => toggleSection("UV")}>
+          <MenuItem text="Custom Frames" link="/acrylic-Custom Frames" />
+          <MenuItem text="Acrylic Prints" link="/acrylic-Acrylic Prints" />
+          <MenuItem text="Canvas Art" link="/acrylic-Canvas Art" />
+          <MenuItem text="Decorative Panels" link="/acrylic-Decorative Panels" />
+          </ExpandableMenu>
+
+
+          <ExpandableMenu title="Flowers & Plants 🌿" isOpen={openSections.Flowers} toggle={() => toggleSection("Flowers")}>
+          <MenuItem text="Fresh Flowers" link="/acrylic-Fresh Flowers" />
+          <MenuItem text="Indoor Plants" link="/acrylic-Indoor Plants" />
+          <MenuItem text="Limited Edition" link="/acrylic-Limited Edition" />
+          <MenuItem text="Outdoor Plants" link="/acrylic-Outdoor Plants" />
+          </ExpandableMenu>
       </MenuSection>
 
       <MenuSection title="Services">
-        <MenuItem text="Printing Services 🖨️" link="/printing-services" />
-        <MenuItem text="Photography & Videography 🎥📷" link="/photo-video" />
-        <MenuItem text="Maintenance Services 🛠️" link="/maintenance" />
+
+      <ExpandableMenu title="Printing Services 🖨️" isOpen={openSections.services} toggle={() => toggleSection("services")}>
+          <MenuItem text="Digital Printing" link="/services-Digital Printing" />
+          <MenuItem text="Offset Printing" link="/services-offset printing" />
+          <MenuItem text="Speciality Printing" link="/services-speciality-prinitng" />
+          <MenuItem text="Large Format Printing" link="/services-Large-Format-Printing" />
+          <MenuItem text="Personalized and custom printing" link="/services-Personalized-and-custom printing" />
+          </ExpandableMenu>
+          <ExpandableMenu title="Photography & Videography 🎥📷" isOpen={openSections.services} toggle={() => toggleSection("services")}>
+          <MenuItem text="Event Photography 📸" link="/services-Event-Photography 📸" />
+          <MenuItem text="Corporate Shoots 🏢" link="/services-Corporate-Shoots 🏢" />
+          <MenuItem text="Product Photography 📦" link="/services-Product-Photography 📦" />
+          <MenuItem text="Promotional Videos 🎬" link="/services-Promotional-Videos 🎬" />
+          <MenuItem text="Special Videography Services 🎞️" link="/services-Special-Videography-Services 🎞️" />
+          </ExpandableMenu>
+          <ExpandableMenu title="Exhibition & Events 🎪" isOpen={openSections.events} toggle={() => toggleSection("events")}>
+          <MenuItem text="Event Setup 🎭" link="/services-CEvent-Setup 🎭" />
+          <MenuItem text="Photography & Videography Setup 📸🎥" link="/services-Photography-&-Videography-Setup 📸🎥 📦" />
+          <MenuItem text="Booth Designing 🏢" link="/services-Booth-Designing 🏢" />
+          <MenuItem text="Trade Show Management 🌐" link="/services-Trade-Show-Management 🌐" />
+          </ExpandableMenu>
+          <ExpandableMenu title="Maintanance Services" isOpen={openSections.maintanance} toggle={() => toggleSection("maintanance")}>
+          <MenuItem text="Home Maintenance 🏠" link="/services-Home-Maintenance 🏠" />
+          <MenuItem text="Office Maintenance 🏢" link="/services-Office-Maintenance 🏢" />
+          <MenuItem text="Facility Management 🏬" link="/services-Facility-Management 🏬" />
+          <MenuItem text="Specialized Services 🛠️" link="/services-Specialized-Services 🛠️" />
+          </ExpandableMenu>
+          <ExpandableMenu title="Other Services" isOpen={openSections.others} toggle={() => toggleSection("others")}>
+          <MenuItem text="Vehicle Branding" link="/services-Vehicle Branding" />
+          <MenuItem text="Safety Equipments" link="/services-Safety Equipments" />
+          <MenuItem text="Lighting poles" link="/services-Lighting poles" />
+          <MenuItem text="Banner" link="/services-Banner" />
+          <MenuItem text="Solar Lights" link="/services-Solar Lights" />
+          <MenuItem text="Security Servilance system" link="/services-Security Servilance system" />
+          <MenuItem text="Flag Stand" link="/services-Flag Stand" />
+          <MenuItem text="Street signs" link="/services-Street signs" />
+          <MenuItem text="Led & Neon Signage" link="/services-Led & Neon Signage" />
+          <MenuItem text="Exbition stand" link="/services-SExbition stand" />
+          <MenuItem text="Merchanding stands" link="/services-Merchanding stands" />
+          <MenuItem text="Flex Face Signage" link="/services-Flex Face Signage" />
+          
+          </ExpandableMenu>
+    
+
       </MenuSection>
 
       <MenuSection title="Construction & Renovation 🏗️">
-        <MenuItem text="New Construction 🏠" link="/new-construction" />
-        <MenuItem text="Home Renovation 🏡" link="/home-renovation" />
-        <MenuItem text="Interior Design 🛋️" link="/interior-design" />
-        <MenuItem text="Commercial Space Remodeling 🏢" link="/commercial-remodeling" />
-        <MenuItem text="Structural & Civil Works ⚒️" link="/structural-works" />
+        <ExpandableMenu title="New Construction 🏠" isOpen={openSections.construction} toggle={() => toggleSection("construction")}>
+          <MenuItem text="Institutional & Public Buildings 🏛️ " link="/Institutional & Public Buildings 🏛️ " />
+          <MenuItem text="Commercial & Industrial Construction 🏢" link="/Commercial & Industrial Construction 🏢" />
+          <MenuItem text="Landscaping & Outdoor Structures 🌳 " link="/Landscaping & Outdoor Structures 🌳 " />
+          <MenuItem text="Lighting & Ceiling Design 💡" link="/Lighting & Ceiling Design 💡" />
+        </ExpandableMenu>
+
+        <ExpandableMenu title="Home Renovation 🏠" isOpen={openSections.rennovation} toggle={() => toggleSection("rennovation")}>
+          <MenuItem text="Luxury Interior Makeovers 🏡 " link="/Luxury Interior Makeovers 🏡 " />
+          <MenuItem text="Smart Home Integration 📡 " link="/Smart Home Integration 📡 " />
+          <MenuItem text="Space Optimization & Partitioning 🚪 " link="Space Optimization & Partitioning 🚪 " />
+          <MenuItem text="Wall Treatments & Decor 🎭 " link="/Wall Treatments & Decor 🎭 " />
+        </ExpandableMenu>
+        <ExpandableMenu title="Interior Design 🎨" isOpen={openSections.design} toggle={() => toggleSection("design")}>
+          <MenuItem text="Kitchen Remodeling 🍽️ " link="/Kitchen Remodeling 🍽️ " />
+          <MenuItem text="Bathroom Renovation 🚿" link="/commercial-construction" />
+          <MenuItem text="Flooring & Tiling 🏡" link="/Flooring & Tiling 🏡" />
+          <MenuItem text="Energy-Efficient Upgrades ⚡" link="/Energy-Efficient Upgrades ⚡" />
+        </ExpandableMenu>
+
+        <ExpandableMenu title="Commercial Space Remodeling 🏢" isOpen={openSections.Remodeling} toggle={() => toggleSection("Remodeling")}>
+          <MenuItem text="Retail Store Renovation 🏬 " link="/Retail Store Renovation 🏬 " />
+          <MenuItem text="Office Interior & Fit-Outs 🏢 " link="/Office Interior & Fit-Outs 🏢 " />
+          <MenuItem text="Hospitality & Restaurant Upgrades 🍽️ " link="/Hospitality & Restaurant Upgrades 🍽️  " />
+          <MenuItem text="Warehouse & Industrial Facility Renovation 🏗️" link="/Warehouse & Industrial Facility Renovation 🏗️ " />
+        </ExpandableMenu>
+        <ExpandableMenu title="Structural & Civil Works ⚒️" isOpen={openSections.Works} toggle={() => toggleSection("Works")}>
+          <MenuItem text="Foundation & Concrete Works 🏗️" link="/residential-Foundation & Concrete Works 🏗️" />
+          <MenuItem text="Masonry & Brickwork 🧱" link="/Masonry & Brickwork 🧱" />
+          <MenuItem text="Steel & Metal Fabrication 🔩" link="/Steel & Metal Fabrication 🔩" />
+          <MenuItem text="Demolition & Site Preparation 🚧" link="/Demolition & Site Preparation 🚧" />
+        </ExpandableMenu>
+
       </MenuSection>
 
       <MenuSection title="Help and Settings">
         <MenuItem text="Your Account" link="/account" />
         <MenuItem text="Customer Section" link="/customer" />
-        <MenuItem text="Sign In" link="/signin" />
+        <MenuItem text="Sign In" link="/signIn" />
+        <MenuItem text="Sign Up" link="/signUp" />
       </MenuSection>
     </div>
   );
 };
 
-// 📌 **Menu Section Component**
+const ExpandableMenu = ({ title, isOpen, toggle, children }) => {
+  return (
+    <div style={styles.expandableMenu}>
+      <div style={styles.menuItem} onClick={toggle}>
+        <span style={styles.menuText}>{title}</span>
+        <span style={styles.menuArrow}>{isOpen ? "▼" : "▶"}</span>
+      </div>
+      {isOpen && <div style={styles.subMenu}>{children}</div>}
+    </div>
+  );
+};
+
 const MenuSection = ({ title, children }) => {
   return (
     <div style={styles.menuSection}>
@@ -66,16 +193,15 @@ const MenuSection = ({ title, children }) => {
   );
 };
 
-// 📌 **Menu Item Component (🔥 Amazon-Like Hover Effect)**
 const MenuItem = ({ text, link }) => {
   return (
-    <a href={link} style={styles.menuItem} className="menu-item">
-      {text} ➝
-    </a>
+    <Link to={link} style={styles.menuItem} className="menu-item">
+      <span style={styles.menuText}>{text}</span>
+      <span style={styles.menuArrow}>➝</span>
+    </Link>
   );
 };
 
-// 📌 **Styles (Amazon-Level Perfection)**
 const styles = {
   sideMenu: {
     position: "fixed",
@@ -101,13 +227,13 @@ const styles = {
     cursor: "pointer",
     textAlign: "right",
     borderBottom: "1px solid #ddd",
-    zIndex: 1001, // Ensures visibility while scrolling 
+    zIndex: 1001,
   },
   header: {
-    backgroundColor: "#3087D1", 
+    backgroundColor: "#3087D1",
     color: "#fff",
-    padding: "15px",
-    borderRadius: "3px",
+    padding: "30px",
+    borderRadius: "8px",
     fontWeight: "bold",
   },
   menuSection: {
@@ -115,32 +241,31 @@ const styles = {
     borderBottom: "1px solid #ddd",
   },
   menuItem: {
-    display: "block",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
     padding: "12px",
-    fontSize: "16px",
+    fontSize: "14px",
     color: "#333",
     textDecoration: "none",
-    transition: "background 0.2s ease-in-out, padding-left 0.2s",
+    cursor: "pointer",
     borderRadius: "5px",
+    border: "1px solid transparent",
+    transition: "0.2s",
+  },
+  expandableMenu: {
+    marginBottom: "10px",
+  },
+  subMenu: {
+    paddingLeft: "15px",
+    borderLeft: "2px solid #ddd",
+  },
+  menuText: {
+    flex: 1,
+  },
+  menuArrow: {
+    transition: "transform 0.2s ease-in-out",
   },
 };
-
-// 📌 **Real Amazon Hover Effects**
-const addHoverEffect = () => {
-  document.querySelectorAll(".menu-item").forEach((Menuitem) => {
-    Menuitem.addEventListener("mouseover", () => {
-      Menuitem.style.background = "#f0f0f0"; // Light gray on hover
-      Menuitem.style.paddingLeft = "13px"; // Moves text slightly right
-    });
-
-    Menuitem.addEventListener("mouseout", () => {
-      Menuitem.style.background = "transparent"; // Removes background
-      Menuitem.style.paddingLeft = "6px"; // Resets padding
-    });
-  });
-};
-
-// 📌 **Apply Hover Effect After Rendering**
-setTimeout(addHoverEffect, 10);
 
 export default SideMenu;

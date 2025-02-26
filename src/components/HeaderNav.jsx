@@ -1,118 +1,109 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaRegHeart, FaShoppingCart, FaGlobe, FaUser, FaSearch } from "react-icons/fa";
 
-const HeaderNav = () => {
+const HeaderNav = ({ cartItems = 0 }) => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState(""); // Added search state
+  const spanRef = useRef(null);
+  const [selectWidth, setSelectWidth] = useState(50); // Default width
+
+  // Update select width dynamically based on content
+  useEffect(() => {
+    if (spanRef.current) {
+      const newWidth = spanRef.current.offsetWidth + 30; // More padding
+      setSelectWidth(newWidth < 70 ? 70 : newWidth); // Ensure a minimum width
+    }
+  }, [selectedCategory]);
+
   return (
-    <div style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      backgroundColor: "white", 
-      color: "black", 
-      padding: "10px 20px",
-      width: "100%",
-      maxWidth: "1600px",
-      margin: "auto",
-      boxSizing: "border-box"
-    }}>
-      
-      {/* 🔍 Logo */}
-      <div style={{ fontSize: "26px", fontWeight: "bold", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px" }}>
-        <img 
-          src="/logo.png" 
-          alt="Logo" 
-          style={{ 
-            height: "80px",  // Adjust size
-            borderRadius: "50%", 
-            width: "100px", // This creates the oval or circular shape
-          }} 
-        />
-      </div>
-
-      {/* 🔎 Search Bar */}
-      <div style={{
-        display: "flex",
-        alignItems: "center",
-        backgroundColor: "white",
-        borderRadius: "6px",
-        overflow: "hidden",
-        width: "50%",
-        maxWidth: "600px",
-        border: "1px solid lightgray",
-      }}>
+    <header className="bg-gray-900 text-white px-6 py-3">
+      <div className="flex items-center justify-between max-w-[1400px] mx-auto">
         
-        {/* Category Dropdown */}
-        <select style={{
-          backgroundColor: "#e8eded",
-          border: "none",
-          padding: "10px",
-          cursor: "pointer",
-          outline: "none",
-          fontSize: "14px",
-          color: "black",
-        }}>
-          <option>All</option>
-          <option>Electronics</option>
-          <option>Fashion</option>
-          <option>Home & Kitchen</option>
-          <option>Books</option>
-        </select>
+        {/* 🔍 Logo */}
+        <div className="flex items-center gap-2 cursor-pointer">
+          <img 
+            src="/logo.png" 
+            alt="Logo" 
+            className="h-30 w-30 ml-16 object-cover rounded-full border-2 border-white shadow-lg"
+          />
+        </div>
 
-        {/* Input Field */}
-        <input 
-          type="text" 
-          placeholder="Search Slasa.in"
-          style={{
-            flex: "1",
-            padding: "10px",
-            border: "none",
-            outline: "none",
-            fontSize: "14px",
-            backgroundColor: "white",
-            color: "black",
-          }}
-        />
+        {/* 🔎 Search Bar */}
+        <div className="flex items-center bg-white rounded-md overflow-hidden w-2/5 max-w-[600px] border border-gray-300 shadow-md">
+          
+          {/* Category Dropdown - Dynamic Width */}
+          <div className="relative">
+          <select
+  className="text-xs px-3 h-12 py-4 border-r border-gray-400 outline-none"
+  style={{ backgroundColor: "#3087d1", width: `${selectWidth}px` }} // ✅ Correct syntax
+  // ✅ Fixed syntax
+  value={selectedCategory}
+  onChange={(e) => setSelectedCategory(e.target.value)}
+>
+  <option>All</option>
+  <option>Electronics</option>
+  <option>Fashion</option>
+  <option>Home & Kitchen</option>
+  <option>Books</option>
+</select>
+            
+            {/* Hidden span to measure text width */}
+            <span ref={spanRef} className="absolute invisible whitespace-nowrap px-2">
+              {selectedCategory}
+            </span>
+          </div>
 
-        {/* Search Button */}
-        <button style={{
-          backgroundColor: "#febd69",
-          border: "none",
-          padding: "10px 15px",
-          cursor: "pointer",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        }}>
-          <FaSearch style={{ color: "black", fontSize: "18px" }} />
-        </button>
-        
+          {/* Input Field */}
+          <input 
+            type="text" 
+            placeholder="Search for products..."
+            className="flex-1 p-2 text-sm bg-white text-black outline-none"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)} // ✅ Added state handling
+          />
+
+          {/* Search Button */}
+          <button style={{ backgroundColor: "#3087d1" }} className="hover:brightness-90 px-4 py-4 flex items-center justify-center">
+            <FaSearch className="text-white text-base" />
+          </button>
+        </div>
+
+        {/* 👤 User Options */}
+        <div className="flex gap-6 items-center text-white text-xs">
+          
+          {/* Sign In */}
+          <div className="flex flex-col items-center cursor-pointer border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200">
+            <FaUser className="text-lg" />
+            <span>Sign In</span>
+          </div>
+
+          {/* Wishlist */}
+          <div className="flex flex-col items-center cursor-pointer border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200">
+            <FaRegHeart className="text-lg" />
+            <span>Wishlist</span>
+          </div>
+
+          {/* Cart */}
+          <div className="flex flex-col items-center cursor-pointer relative border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200">
+            <FaShoppingCart className="text-xl" />
+            {cartItems > 0 && (
+              <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs px-1 rounded-full">
+                {cartItems}
+              </span>
+            )}
+            <span>Cart</span>
+          </div>
+
+          {/* Language Selector */}
+          <div className="flex flex-col items-center cursor-pointer border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200">
+            <FaGlobe className="text-lg" />
+            <span>EN</span>
+          </div>
+
+        </div>
+
       </div>
-
-      {/* 👤 User Options */}
-      <div style={{ display: "flex", gap: "20px", alignItems: "center", fontSize: "18px" }}>
-        <span style={{ cursor: "pointer", transition: "0.3s", display: "flex", alignItems: "center", gap: "10px" }}>
-          💲
-        </span> 
-
-        <span style={{ cursor: "pointer", transition: "0.3s", display: "flex", alignItems: "center", gap: "10px" }}>
-          <FaUser />
-          Sign In / Sign Up
-        </span> 
-
-        <span style={{ cursor: "pointer", transition: "0.3s" }}>
-          <FaRegHeart />
-        </span> 
-
-        <span style={{ cursor: "pointer", transition: "0.3s", display: "flex", alignItems: "center", gap: "10px" }}>
-          <FaShoppingCart />
-        </span>
-
-        <span style={{ cursor: "pointer", transition: "0.3s", display: "flex", alignItems: "center", gap: "10px" }}>
-          <FaGlobe />
-        </span>
-      </div>
-
-    </div>
+    </header>
   );
 };
 

@@ -6,296 +6,62 @@ const HeaderTop = () => {
   const [isAreaOpen, setIsAreaOpen] = useState(false);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        flexWrap: "wrap",
-        backgroundColor: "black", // Entire background is black
-        color: "white", // Text color is white
-        padding: "18px 30px", // Balanced padding for proper spacing
-        fontSize: "14px", // Slightly larger font size for clarity
-        fontWeight: "600", // Medium weight for readability
-        width: "100%",
-        boxSizing: "border-box", // Ensures proper width handling
-      }}
-    >
-      {/* ✅ Left Section */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "20px", // Increased gap for better spacing
-          flexWrap: "wrap",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            cursor: "pointer",
-            padding: "10px 15px",
-            borderRadius: "5px",
-            backgroundColor: "black", // Black background for each item
-            color: "white", // White text color
-            border: "2px solid transparent", // Transparent border
-          }}
-        >
+    <div className="bg-black text-white py-4 px-6 flex justify-between items-center flex-wrap">
+      {/* Left Section */}
+      <div className="flex items-center gap-6 flex-wrap">
+        <div className="flex items-center gap-2 cursor-pointer px-4 py-2 rounded-md hover:bg-gray-800 transition">
           <FaShippingFast />
           <span>Free Shipping</span>
         </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            cursor: "pointer",
-            padding: "10px 15px",
-            borderRadius: "5px",
-            backgroundColor: "black",
-            color: "white",
-            border: "2px solid transparent",
-          }}
-        >
+        <div className="flex items-center gap-2 cursor-pointer px-4 py-2 rounded-md hover:bg-gray-800 transition">
           <FaCalendarAlt />
           <span>Click and Collect</span>
         </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            cursor: "pointer",
-            padding: "10px 15px",
-            borderRadius: "5px",
-            backgroundColor: "black",
-            color: "white",
-            border: "2px solid transparent",
-          }}
-        >
+        <div className="flex items-center gap-2 cursor-pointer px-4 py-2 rounded-md hover:bg-gray-800 transition">
           <span>Warranty</span>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            cursor: "pointer",
-            padding: "10px 15px",
-            borderRadius: "5px",
-            backgroundColor: "black",
-            color: "white",
-            border: "2px solid transparent",
-          }}
-        >
-          <span>📆</span>
         </div>
       </div>
 
-      {/* ✅ Middle Section */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "30px", // Increased gap between sections
-          flexWrap: "wrap",
-        }}
-      >
+      {/* Middle Section */}
+      <div className="flex items-center gap-6 relative">
         {/* B2B Dropdown */}
         <div
-          style={{
-            cursor: "pointer",
-            padding: "5px 10px",
-            borderRadius: "5px",
-            backgroundColor: "black", // Black background
-            color: "white", // White text color
-            border: "2px solid transparent", // Transparent border
-            position: "relative",
-            display: "flex",
-            alignItems: "center",
-          }}
+          className="relative cursor-pointer px-4 py-2 rounded-md hover:bg-gray-800 transition"
           onMouseEnter={() => setIsB2BOpen(true)}
           onMouseLeave={() => setIsB2BOpen(false)}
         >
-          B2B Designing Services <span style={{ marginLeft: "10px" }}>⌄</span>
-
+          B2B Designing Services ⌄
           {isB2BOpen && (
-            <div
-              style={{
-                position: "absolute",
-                top: "100%",
-                left: "0",
-                backgroundColor: "#333", // Dark background
-                color: "white",
-                borderRadius: "8px",
-                padding: "10px 20px",
-                boxShadow: "0 10px 15px rgba(0, 0, 0, 0.3)", // Soft shadow for depth
-                zIndex: 1,
-                transformOrigin: "top center",
-                minWidth: "200px", // Consistent width
-                opacity: 1,
-                visibility: "visible",
-                transition: "opacity 0.3s ease, visibility 0.3s ease",
-              }}
-            >
-              <p
-                style={{
-                  padding: "10px 0",
-                  borderBottom: "1px solid #444",
-                  cursor: "pointer", // Pointer cursor on hover
-                  transition: "background-color 0.2s ease",
-                }}
-                onMouseEnter={(e) => (e.target.style.backgroundColor = "#555")}
-                onMouseLeave={(e) => (e.target.style.backgroundColor = "transparent")}
-              >
-                Custom Designs
-              </p>
-              <p
-                style={{
-                  padding: "10px 0",
-                  cursor: "pointer",
-                  transition: "background-color 0.2s ease",
-                }}
-                onMouseEnter={(e) => (e.target.style.backgroundColor = "#555")}
-                onMouseLeave={(e) => (e.target.style.backgroundColor = "transparent")}
-              >
-                Consulting Services
-              </p>
+            <div className="absolute left-0 top-full mt-2 bg-gray-900 text-white rounded-md shadow-lg p-2 w-48">
+              <p className="px-4 py-2 hover:bg-gray-700 transition">Custom Designs</p>
+              <p className="px-4 py-2 hover:bg-gray-700 transition">Consulting Services</p>
             </div>
           )}
         </div>
 
-        {/* Deliver to area Dropdown */}
+        {/* Deliver to Area Dropdown */}
         <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            cursor: "pointer",
-            padding: "5px 10px",
-            borderRadius: "5px",
-            backgroundColor: "black",
-            color: "white",
-            border: "2px solid transparent",
-            position: "relative",
-          }}
+          className="relative flex items-center gap-2 cursor-pointer px-4 py-2 rounded-md hover:bg-gray-800 transition"
           onMouseEnter={() => setIsAreaOpen(true)}
           onMouseLeave={() => setIsAreaOpen(false)}
         >
           <FaMapMarkerAlt />
-          <span>Deliver to area <span style={{ marginLeft: "10px" }}>⌄</span></span>
-
+          <span>Deliver to Area ⌄</span>
           {isAreaOpen && (
-            <div
-              style={{
-                position: "absolute",
-                top: "100%",
-                left: "0",
-                backgroundColor: "#333",
-                color: "white",
-                borderRadius: "8px",
-                padding: "10px 20px",
-                boxShadow: "0 10px 15px rgba(0, 0, 0, 0.3)",
-                zIndex: 1,
-                transformOrigin: "top center",
-                minWidth: "200px",
-                opacity: 1,
-                visibility: "visible",
-                transition: "opacity 0.3s ease, visibility 0.3s ease",
-              }}
-            >
-              <p
-                style={{
-                  padding: "10px 0",
-                  borderBottom: "1px solid #444",
-                  cursor: "pointer", // Pointer cursor on hover
-                  transition: "background-color 0.2s ease",
-                }}
-                onMouseEnter={(e) => (e.target.style.backgroundColor = "#555")}
-                onMouseLeave={(e) => (e.target.style.backgroundColor = "transparent")}
-              >
-                India
-              </p>
-              <p
-                style={{
-                  padding: "10px 0",
-                  cursor: "pointer",
-                  transition: "background-color 0.2s ease",
-                }}
-                onMouseEnter={(e) => (e.target.style.backgroundColor = "#555")}
-                onMouseLeave={(e) => (e.target.style.backgroundColor = "transparent")}
-              >
-                USA
-              </p>
-              <p
-                style={{
-                  padding: "10px 0",
-                  cursor: "pointer",
-                  transition: "background-color 0.2s ease",
-                }}
-                onMouseEnter={(e) => (e.target.style.backgroundColor = "#555")}
-                onMouseLeave={(e) => (e.target.style.backgroundColor = "transparent")}
-              >
-                Europe
-              </p>
+            <div className="absolute left-0 top-full mt-2 bg-gray-900 text-white rounded-md shadow-lg p-2 w-48">
+              <p className="px-4 py-2 hover:bg-gray-700 transition">India</p>
+              <p className="px-4 py-2 hover:bg-gray-700 transition">USA</p>
+              <p className="px-4 py-2 hover:bg-gray-700 transition">Europe</p>
             </div>
           )}
         </div>
       </div>
 
-      {/* ✅ Right Section */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "20px", // Increased gap between elements
-          flexWrap: "wrap",
-          cursor: "pointer",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            padding: "10px 15px",
-            backgroundColor: "black",
-            color: "white",
-            borderRadius: "5px",
-          }}
-        >
-          Store Locator
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            padding: "10px 15px",
-            backgroundColor: "black",
-            color: "white",
-            borderRadius: "5px",
-          }}
-        >
-          Help
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            padding: "10px 15px",
-            backgroundColor: "black",
-            color: "white",
-            borderRadius: "5px",
-          }}
-        >
-          Sell with Us
-        </div>
+      {/* Right Section */}
+      <div className="flex items-center gap-6 flex-wrap">
+        <div className="cursor-pointer px-4 py-2 rounded-md hover:bg-gray-800 transition">Store Locator</div>
+        <div className="cursor-pointer px-4 py-2 rounded-md hover:bg-gray-800 transition">Help</div>
+        <div className="cursor-pointer px-4 py-2 rounded-md hover:bg-gray-800 transition">Sell with Us</div>
       </div>
     </div>
   );
