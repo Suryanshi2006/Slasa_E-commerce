@@ -20,7 +20,7 @@ const SideMenu = ({ isOpen, onClose }) => {
         transform: isOpen ? "translateX(0)" : "translateX(-100%)",
       }}
     >
-      <div style={styles.closeButton} onClick={onClose}>✖</div>
+      <div style={styles.closeButton} onClick={onClose}>&#10006;</div>
       <div style={styles.header}>
         <h2> 👨🏻 Hello, Sign In</h2>
       </div>

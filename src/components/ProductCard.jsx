@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
           )}
         </div>
         <div className="p-3">
-          <h3 className="text-lg font-semibold mt-2">{product.title}</h3>
+          <h3 className="text-lg font-semibold mt-2 text-[#3087d1]">{product.title}</h3>
           <p className="text-gray-800 font-bold">Price: ${product.price}</p>
           <div className="flex items-center mt-1">
             <span className="text-yellow-500">{"★".repeat(product.rating)}</span>

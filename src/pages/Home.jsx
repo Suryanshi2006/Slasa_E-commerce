@@ -1,8 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom' // Import Outlet
-import HeaderTop from '../components/HeaderTop.jsx'
-import HeaderNav from '../components/HeaderNav.jsx'
-import HeaderMain from '../components/HeaderMain.jsx'
+
 import ProductCard from '../components/ProductCard.jsx'
 import ProductList from '../components/ProductList.jsx'
 import HeroSection from '../components/HeroSection.jsx'
@@ -25,11 +23,13 @@ const Home = () => {
       width: "100vw", 
       overflowX: "hidden"
     }}>
-      <HeaderTop />
-      <HeaderNav />
-      <HeaderMain />
       <ProductSection/>
+
+
+      
+     
      <div className='flex justify-center gap-4 flex-wrap p-4'>
+  
      <ProductCard/>
      <ProductList/>
      </div>
