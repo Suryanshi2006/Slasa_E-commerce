@@ -14,6 +14,7 @@ import ProductDetail from "./components/ProductDetail";
 import PageLayout from "./components/PageLayout";
 
 import ProductCard from "./components/ProductCard";
+import Acrylic from "./pages/Acrylic";
 
 const App = () => {
   return (
@@ -29,6 +30,15 @@ const App = () => {
               </PageLayout>
             }
           />
+            <Route
+            path="/acrylic"
+            element={
+              <PageLayout>
+               <Acrylic/>
+              </PageLayout>
+            }
+          />
+          
           <Route
             path="/customer"
             element={
@@ -63,8 +73,6 @@ const App = () => {
               </PageLayout>
             }
           />
-
-       
           {/* Routes that DO NOT need the sidebar */}
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
