@@ -11,7 +11,7 @@ const Hero = ({ image, title, highlight, subtitle, buttonText, buttonLink }) => 
       />
 
       {/* Overlay Content */}
-      <div className="absolute text-center text-white">
+      <div className="absolute bottom-10 left-20 text-center text-white">
         <h1 className="text-4xl font-bold">
           {title} <span className="text-blue-500">{highlight}</span>,<br />
           {subtitle}

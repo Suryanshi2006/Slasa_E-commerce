@@ -9,11 +9,12 @@ const HeroSection = () => {
     <div className="text-center py-10 w-full !bg-gray-200 container mx-auto">
       {/* First Section */}
       <div className="flex items-center justify-center gap-4">
-        <h1 className="text-3xl font-bold text-[#3087d1]">
-          Luxury, Style and Comfort
-        </h1>
-        <span className="w-155 h-1 bg-[#3087d1]"></span>
-      </div>
+  <h1 className="text-2xl font-bold text-[#3087d1] flex-shrink-0">
+    Luxury, Style and Comfort
+  </h1>
+  <span className="w-96 h-1 bg-[#3087d1]"></span>
+</div>
+
       <p className="text-black px-6 text-lg ml-4 mt-5">
         Looking for perfect decor for your home?
       </p>
@@ -21,7 +22,7 @@ const HeroSection = () => {
 
       {/* Second Section */}
       <div className="flex items-center justify-center gap-4 mt-10">
-        <h1 className="text-3xl font-bold text-[#3087d1]">
+        <h1 className="text-3xl font-bold text-[#3087d1] px-4 flex-shrink-0">
           Bed, Bathroom, and Kitchen
         </h1>
         <span className="w-150 h-1 bg-[#3087d1]"></span>
@@ -31,7 +32,7 @@ const HeroSection = () => {
       {/* Third Section */}
       <div className="flex items-center justify-center gap-4 mt-10">
         <span className="w-200 h-1 bg-[#3087d1]"></span>
-        <h1 className="text-3xl font-bold text-[#3087d1]">Home Decor Items</h1>
+        <h1 className="text-3xl font-bold text-[#3087d1] px-4 flex-shrink-0 ">Home Decor Items</h1>
       </div>
 
       {/* Hero Image */}
@@ -49,7 +50,7 @@ const HeroSection = () => {
           <div className="w-2 h-14 bg-[#3087d1] mr-3"></div>
 
           {/* Text */}
-          <h2 className="text-white text-6xl font-bold">Bedroom Furniture</h2>
+          <h2 className="text-white text-6xl font-bold flex-shrink-0">Bedroom Furniture</h2>
         </div>
       </div>
 
@@ -81,7 +82,7 @@ const HeroSection = () => {
           <div className="w-2 h-14 bg-[#3087d1] mr-3"></div>
 
           {/* Text */}
-          <h2 className="text-white text-6xl font-bold">Wall Acrylic</h2>
+          <h2 className="text-white text-6xl font-bold flex-shrink-0s">Wall Acrylic</h2>
         </div>
       </div>
 

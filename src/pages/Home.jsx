@@ -9,11 +9,30 @@ import ProductSection from "../components/ProductSection.jsx";
 import HomeCategories from "../components/Homecategories.jsx";
 import Cult from "../components/Cult.jsx";
 import PromotionOffers from "../components/PromotionOffers.jsx";
-import PackageSection from "../components/PackageSection.jsx";
+import PackageSection from "../components/PackageSection.jsx"; // Updated import
 import Voucher from "../components/Voucher.jsx";
 import Hero from "../components/Hero.jsx";
+import { useVouchers } from "../context/VoucherContext";
+import { usePackages } from "../context/PackageContext"; // Corrected import
 
 const Home = () => {
+  const {
+    voucherData,
+    constructionVoucher,
+    homepageVouchers,
+    newArrivalsVoucher,
+    photographyVideographyVoucher,
+    printingVoucher,
+    renovationVoucher,
+    todaysDealsVoucher,
+  } = useVouchers();
+  
+  // Access packages from context
+  const { acrylicPackages, constructionPackages, renovationPackages, newArrivalsPackages, photographyPackages, printingPackages, todaysDealsPackages } = usePackages();
+
+  const title = "Featured Products";
+  const description = "Discover our best-selling products, carefully selected to meet all your needs for home renovation and construction projects.";
+
   return (
     <div
       style={{
@@ -26,14 +45,17 @@ const Home = () => {
       <div className="container mx-auto">
         <Hero
           image="/Images/Building.webp" // Directly reference the image path
-          title="Building"
-          highlight="Your Dreams"
-          subtitle="One Brick at a Time"
+          title="Discover"
+          highlight="Slasa's World"
+          subtitle="Where Innovation Meets Quality"
           buttonText="Explore"
           buttonLink="/explore"
         />
 
-        <ProductSection />
+        <ProductSection 
+          title={title} 
+          description={description} 
+        />
       </div>
 
       <div className="flex justify-center gap-4 flex-wrap p-4">
@@ -48,10 +70,33 @@ const Home = () => {
           <HomeCategories />
         </div>
       </a>
-      <PackageSection />
+
+      {/* Pass packages from context */}
+      <PackageSection 
+    packages={[
+      ...acrylicPackages,
+      ...constructionPackages,
+      ...renovationPackages,
+      ...printingPackages,
+      ...todaysDealsPackages,
+    ]}
+  />
+
       <Cult />
       <PromotionOffers />
-      <Voucher />
+      {homepageVouchers.map((voucher, index) => (
+        <Voucher 
+          key={index}
+          title={voucher.title}
+          subtitle={voucher.subtitle}
+          discount={voucher.discount}
+          sale={voucher.sale}
+          categories={voucher.categories}
+          imageUrl={voucher.imageUrl}
+          buttonText={voucher.buttonText}
+          buttonLink={voucher.buttonLink}
+        />
+      ))}
 
       <Outlet />
     </div>

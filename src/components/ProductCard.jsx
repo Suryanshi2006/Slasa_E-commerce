@@ -48,12 +48,16 @@ const ProductCard = ({ product }) => {
         {/* Wishlist Button */}
         <button
   onClick={toggleWishlist}
-  className={`absolute top-2 right-2 p-2 rounded-full transition-all duration-300 shadow-md hover:scale-110 ${
-    isWishlisted ? "bg-[#3087d1] text-white" : "bg-gray-300 text-gray-600"
+  className={`absolute top-2 right-2 p-2 rounded-full transition-all duration-300 shadow-md hover:scale-110 border-2 ${
+    isWishlisted
+      ? "bg-[#3087d1] text-white hover:!border-[#3087d1]"
+      : "bg-gray-300 text-gray-600 hover:!border-[#3087d1]"
   }`}
 >
-  <Heart size={20} className={isWishlisted ? "fill-[#3087d1]" : " text-[#3087d1]"} />
+  <Heart size={20} className={isWishlisted ? "fill-[#3087d1]" : "text-[#3087d1]"} />
 </button>
+
+
 
       </div>
       <div className="p-3">
@@ -61,7 +65,10 @@ const ProductCard = ({ product }) => {
         <p className="text-gray-800 font-bold">Price: ${product.price}</p>
         <div className="flex items-center mt-1">
           <span className="text-yellow-500">{"★".repeat(product.rating)}</span>
-          <span className="text-gray-500 text-sm ml-1">({product.reviews} Reviews)</span>
+          <span className="text-gray-500 text-sm ml-1">
+  ({Array.isArray(product.reviews) ? product.reviews.length : product.reviews} Reviews)
+</span>
+
         </div>
         <p className="text-gray-600 text-sm mt-1">{product.shipping}</p>
         <div className="mt-3 flex gap-2">

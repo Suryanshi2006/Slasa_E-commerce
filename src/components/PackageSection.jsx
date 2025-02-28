@@ -1,24 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const packages = [
-  {
-    title: "Basic Renovation Package",
-    image: "Images/Bed.jpeg", // Replace with actual image URL
-    alt: "Basic Renovation",
-    description: "This package includes basic interior upgrades and furniture styling.",
-    link: "/basic-renovation", // Replace with actual URL
-  },
-  {
-    title: "Premium Construction Package",
-    image: "Images/Promotion.jpeg", // Replace with actual image URL
-    alt: "Premium Renovation",
-    description: "A high-end package with luxurious renovations and premium materials.",
-    link: "/premium-renovation", // Replace with actual URL
-  },
-];
-
-const PackageSection = () => {
+const PackageSection = ({ packages = [] }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
@@ -29,22 +12,24 @@ const PackageSection = () => {
       </div>
 
       {/* Package Cards */}
-      <div className="flex justify-center gap-20 mt-8">
+      <div className="flex flex-wrap justify-center gap-10 mt-8">
         {packages.map((pkg, index) => (
-          <a
+          <motion.a
             key={index}
-            href={pkg.link} // Makes it clickable
-            className="relative w-80 bg-gray-300 overflow-hidden shadow-lg cursor-pointer block"
+            href={pkg.link}
+            className="relative w-80 bg-gray-300 overflow-hidden shadow-lg cursor-pointer block transform transition-transform hover:scale-105"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
+            whileHover={{ scale: 1.05 }} // Adds scaling effect
+            transition={{ type: "spring", stiffness: 300 }}
           >
             {/* Image & Hover Effect */}
             <div className="relative m-4 bg-white overflow-hidden">
               <motion.img
-                src={pkg.image}
-                alt={pkg.alt}
-                className="w-full h-56 object-cover"
-                animate={hoveredIndex === index ? { x: "-100%" } : { x: "0%" }} // Moves left fully
+                src={pkg.image || '/default-image.jpg'} // Default fallback image
+                alt={pkg.alt || 'Package Image'}
+                className="w-full h-56 object-cover transition-transform duration-500"
+                animate={hoveredIndex === index ? { x: "-100%" } : { x: "0%" }}
                 transition={{ duration: 0.5 }}
               />
 
@@ -63,10 +48,11 @@ const PackageSection = () => {
 
               {/* Explore Button on Image */}
               <motion.button
-                className="absolute top-4 left-4 bg-gray-200 !text-black px-4 py-2 rounded-md text-sm flex items-center"
+                className="absolute top-4 left-4 bg-gray-200 text-black px-4 py-2 rounded-md text-sm flex items-center"
                 initial={{ opacity: 1 }}
                 animate={hoveredIndex === index ? { opacity: 0 } : { opacity: 1 }}
                 transition={{ duration: 0.3 }}
+                aria-label={`Explore ${pkg.title}`}
               >
                 Explore <span className="ml-2">➜</span>
               </motion.button>
@@ -76,15 +62,21 @@ const PackageSection = () => {
             <div className="p-4 text-center font-semibold text-black">
               {pkg.title}
             </div>
-          </a>
+          </motion.a>
         ))}
       </div>
 
       {/* Carousel Dots */}
       <div className="flex justify-center mt-6">
-        <div className="w-3 h-3 bg-white rounded-full mx-1"></div>
-        <div className="w-3 h-3 bg-gray-400 rounded-full mx-1"></div>
-        <div className="w-3 h-3 bg-gray-400 rounded-full mx-1"></div>
+        {packages.map((_, index) => (
+          <div
+            key={index}
+            className={`w-3 h-3 rounded-full mx-1 cursor-pointer transition-colors duration-300 ${
+              hoveredIndex === index ? "bg-white" : "bg-gray-400"
+            }`}
+            onClick={() => setHoveredIndex(index)}
+          ></div>
+        ))}
       </div>
     </div>
   );
