@@ -6,38 +6,45 @@ import HeaderNav from "./HeaderNav";
 
 const PageLayout = ({ children }) => {
   const [showHeaderNav, setShowHeaderNav] = useState(true);
+  const headerHeight = showHeaderNav ? 240 : 190;
 
   useEffect(() => {
+    let timeout;
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setShowHeaderNav(false); // Hide HeaderNav on scroll
-      } else {
-        setShowHeaderNav(true); // Show HeaderNav when at the top
-      }
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        setShowHeaderNav(window.scrollY <= 50);
+      }, 100);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <div className="flex flex-col h-screen">
-      {/* Fixed Top Header */}
-      <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
-      {showHeaderNav &&    <HeaderTop /> } {/* Show HeaderNav only if scrolling is at the top */}
-        <HeaderNav />
-        <HeaderMain />
-       
-       
-      </div>
+    <div className="flex min-h-screen bg-gray-50">
+      {/* Sidebar */}
+      <SideMenu className="fixed top-0 left-0 z-10 w-64 bg-gray-800 text-white" />
 
-      {/* Page Content */}
-      <div className="flex flex-grow mt-[120px]">
-        {/* Sidebar */}
-        <SideMenu className="w-64 fixed h-full bg-gray-100 shadow-md" />
+      {/* Main Content Area */}
+      <div
+        className="flex-grow ml-64" // This ensures the content shifts right
+        style={{ marginTop: `${headerHeight}px` }}
+      >
+        <div className="w-full">
+          {/* Header */}
+          <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg">
+            {showHeaderNav && <HeaderTop />}
+            <HeaderNav />
+            <HeaderMain />
+          </div>
 
-        {/* Main Content Area */}
-        <div className="flex-grow p-4 ml-64">{children}</div>
+          {/* Page Content */}
+          <div className="mt-20">{children}</div> {/* Adjust margin-top to prevent content overlap */}
+        </div>
       </div>
     </div>
   );
