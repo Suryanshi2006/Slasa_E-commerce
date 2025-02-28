@@ -1,13 +1,41 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password, "Remember Me:", rememberMe);
+
+    if (!email || !password) {
+      alert("All fields are required!");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await axios.post("https://your-api.com/api/signin", {
+        email,
+        password,
+      });
+
+      const { token } = response.data; // Extract JWT token
+
+      // ✅ Store token in localStorage
+      localStorage.setItem("authToken", token);
+
+      alert("Login successful! Redirecting...");
+      navigate("/dashboard"); // Redirect to dashboard
+    } catch (error) {
+      console.error("Login error:", error.response?.data || error.message);
+      alert(error.response?.data?.message || "Invalid credentials!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -16,7 +44,6 @@ const SignIn = () => {
         <h2 className="text-3xl font-extrabold text-center text-[#3087d1] mb-8">Sign In</h2>
         
         <form onSubmit={handleSubmit}>
-          {/* Email Field */}
           <div className="mb-6">
             <label className="block text-gray-700 text-sm font-medium mb-2">Email</label>
             <input 
@@ -29,7 +56,6 @@ const SignIn = () => {
             />
           </div>
 
-          {/* Password Field */}
           <div className="mb-6">
             <label className="block text-gray-700 text-sm font-medium mb-2">Password</label>
             <input 
@@ -42,31 +68,17 @@ const SignIn = () => {
             />
           </div>
 
-          {/* Remember Me & Forgot Password */}
-          <div className="flex justify-between items-center mb-6">
-            <label className="flex items-center text-sm text-gray-600">
-              <input 
-                type="checkbox" 
-                checked={rememberMe}
-                onChange={(e) => setRememberMe(e.target.checked)}
-                className="mr-2" 
-              /> Remember me
-            </label>
-            <a href="#" className="text-sm text-[#3087d1] hover:underline">Forgot Password?</a>
-          </div>
-
-          {/* Submit Button */}
           <button 
             type="submit" 
             className="w-full bg-[#3087d1] text-white py-3 rounded-xl hover:bg-[#4c6ef5] transition-all duration-300 transform active:scale-95"
+            disabled={loading}
           >
-            Sign In
+            {loading ? "Signing In..." : "Sign In"}
           </button>
         </form>
 
-        {/* Sign Up Link */}
         <p className="text-center text-sm text-gray-600 mt-6">
-          Don't have an account? <a href="#" className="text-[#3087d1] hover:underline">Sign Up</a>
+          Don't have an account? <a href="/signup" className="text-[#3087d1] hover:underline">Sign Up</a>
         </p>
       </div>
     </div>

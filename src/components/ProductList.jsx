@@ -8,7 +8,7 @@ const ProductList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("https://dummyjson.com/products") // 🔹 Fetching from API
+    axios.get("https://dummyjson.com/products")
       .then(response => {
         const updatedProducts = response.data.products.map(product => ({
           id: product.id,
@@ -16,10 +16,10 @@ const ProductList = () => {
           price: product.price,
           image: product.thumbnail,
           rating: Math.round(product.rating),
-          reviews: Math.floor(product.stock / 2),  // 🔹 Estimated reviews
+          reviews: Math.floor(product.stock / 2),
           discount: `${Math.round(product.discountPercentage)}%`,
-          tag: product.category.toUpperCase(), // 🔹 Category as tag
-          shipping: "In Stock - Ships in 3-5 days | Free Shipping" // 🔹 Static shipping info
+          tag: product.category.toUpperCase(),
+          shipping: "In Stock - Ships in 3-5 days | Free Shipping"
         }));
         setProducts(updatedProducts);
         setLoading(false);

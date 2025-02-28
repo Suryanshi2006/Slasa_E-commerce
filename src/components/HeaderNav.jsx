@@ -14,33 +14,26 @@ const HeaderNav = () => {
 
   // Fetch categories dynamically
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/categories") // Replace with real API
+    fetch("https://fakestoreapi.com/products/categories")
       .then((res) => res.json())
       .then((data) => setCategories(["All", ...data]))
       .catch((error) => console.error("Error fetching categories:", error));
   }, []);
 
-  // Fetch cart items from Local Storage (user's cart)
+  // Fetch cart items from Local Storage on mount
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(cart.length); // Set cart count based on local storage
-  }, []);
+    const updateCartItems = () => {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      setCartItems(cart.length);
+    };
 
-  // Check if user is logged in
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
+    updateCartItems(); // Update on component mount
+    window.addEventListener("storage", updateCartItems); // Listen for storage updates
 
-  // Update dropdown width dynamically
-  useEffect(() => {
-    if (spanRef.current) {
-      const newWidth = spanRef.current.offsetWidth + 30;
-      setSelectWidth(newWidth < 70 ? 70 : newWidth);
-    }
-  }, [selectedCategory]);
+    return () => {
+      window.removeEventListener("storage", updateCartItems); // Cleanup listener
+    };
+  }, []);
 
   // Handle Sign In click
   const handleSignIn = () => {
@@ -89,8 +82,12 @@ const HeaderNav = () => {
 
         {/* User Options */}
         <div className="flex gap-6 items-center text-white text-xs">
+          {/* Sign In */}
           <div
+            role="button"
+            tabIndex={0}
             onClick={handleSignIn}
+            onKeyDown={(e) => e.key === "Enter" && handleSignIn()}
             className="flex flex-col items-center cursor-pointer border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200"
           >
             <FaUser className="text-lg" />
@@ -98,13 +95,25 @@ const HeaderNav = () => {
           </div>
 
           {/* Wishlist */}
-          <div className="flex flex-col items-center cursor-pointer border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200">
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => navigate("/wishlist")}
+            onKeyDown={(e) => e.key === "Enter" && console.log("Wishlist clicked")}
+            className="flex flex-col items-center cursor-pointer border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200"
+          >
             <FaRegHeart className="text-lg" />
             <span>Wishlist</span>
           </div>
 
           {/* Cart */}
-          <div className="flex flex-col items-center cursor-pointer relative border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200">
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => navigate("/cart")}
+            onKeyDown={(e) => e.key === "Enter" && navigate("/cart")}
+            className="flex flex-col items-center cursor-pointer relative border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200"
+          >
             <FaShoppingCart className="text-xl" />
             {cartItems > 0 && (
               <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs px-1 rounded-full">
