@@ -1,7 +1,7 @@
 import React from "react";
 
 const imageData = [
-  { id: 1, src: "/Images/cult.jpeg", price: "$229", description: "Best wall decor deals" },
+  { id: 1, src: "/Images/Bed.jpeg", price: "$229", description: "Best wall decor deals" },
   { id: 2, src: "/Images/cult.jpeg", price: "$229", description: "Best wall decor deals" },
   { id: 3, src: "/Images/cult.jpeg", price: "$229", description: "Best wall decor deals" },
   { id: 4, src: "/Images/cult.jpeg", price: "$229", description: "Best wall decor deals" },
