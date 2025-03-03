@@ -28,6 +28,18 @@ export const VoucherProvider = ({ children }) => {
     buttonText: "Shop Now",
     buttonLink: "/construction",
   };
+  const woodEaselCanvasVoucher = [
+    {
+    title: "Voucher",
+    subtitle: "Exclusive Ramadan Offer",
+    discount: "Extra 15% off",
+    sale: "30% Sale",
+    categories: "Wooden Easels | Canvas Art | Calligraphy",
+    imageUrl: "Images/easel7.avif",
+    buttonText: "Shop Now",
+    buttonLink: "/wood-easel-canvas",
+ } ];
+  
 
   const homepageVouchers = [
     {
@@ -117,6 +129,7 @@ export const VoucherProvider = ({ children }) => {
     printingVoucher,
     renovationVoucher,
     todaysDealsVoucher,
+    woodEaselCanvasVoucher,
   };
 
   return (
