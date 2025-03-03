@@ -14,8 +14,11 @@ import Voucher from "../components/Voucher.jsx";
 import Hero from "../components/Hero.jsx";
 import { useVouchers } from "../context/VoucherContext";
 import { usePackages } from "../context/PackageContext"; // Corrected import
+import { CultProvider, cultData } from "../context/CultContext"; 
+
 
 const Home = () => {
+
   const {
     voucherData,
     constructionVoucher,
@@ -26,12 +29,21 @@ const Home = () => {
     renovationVoucher,
     todaysDealsVoucher,
   } = useVouchers();
-  
+
   // Access packages from context
-  const { acrylicPackages, constructionPackages, renovationPackages, newArrivalsPackages, photographyPackages, printingPackages, todaysDealsPackages } = usePackages();
+  const {
+    acrylicPackages,
+    constructionPackages,
+    renovationPackages,
+    newArrivalsPackages,
+    photographyPackages,
+    printingPackages,
+    todaysDealsPackages,
+  } = usePackages();
 
   const title = "Featured Products";
-  const description = "Discover our best-selling products, carefully selected to meet all your needs for home renovation and construction projects.";
+  const description =
+    "Discover our best-selling products, carefully selected to meet all your needs for home renovation and construction projects.";
 
   return (
     <div
@@ -52,10 +64,7 @@ const Home = () => {
           buttonLink="/explore"
         />
 
-        <ProductSection 
-          title={title} 
-          description={description} 
-        />
+        <ProductSection title={title} description={description} />
       </div>
 
       <div className="flex justify-center gap-4 flex-wrap p-4">
@@ -72,20 +81,23 @@ const Home = () => {
       </a>
 
       {/* Pass packages from context */}
-      <PackageSection 
-    packages={[
-      ...acrylicPackages,
-      ...constructionPackages,
-      ...renovationPackages,
-      ...printingPackages,
-      ...todaysDealsPackages,
-    ]}
-  />
+      <PackageSection
+        packages={[
+          ...acrylicPackages,
+          ...constructionPackages,
+          ...renovationPackages,
+          ...printingPackages,
+          ...todaysDealsPackages,
+        ]}
+      />
 
-      <Cult />
-      <PromotionOffers />
+<CultProvider value={cultData.homeCultData}>
+          <Cult />
+        </CultProvider>
+      <PromotionOffers promotionId={2} />
+      <PromotionOffers promotionId={1} />
       {homepageVouchers.map((voucher, index) => (
-        <Voucher 
+        <Voucher
           key={index}
           title={voucher.title}
           subtitle={voucher.subtitle}

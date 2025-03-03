@@ -7,7 +7,7 @@ import HeaderNav from "./HeaderNav";
 const PageLayout = ({ children }) => {
   const [showHeaderNav, setShowHeaderNav] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const headerHeight = showHeaderNav ? 220 : 180;
+  const headerHeight = showHeaderNav ? 180 : 180;
 
   useEffect(() => {
     let timeout;

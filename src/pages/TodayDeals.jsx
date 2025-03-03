@@ -11,6 +11,7 @@ import PromotionOffers from '../components/PromotionOffers'
 import Voucher from '../components/Voucher'
 import { useVouchers } from "../context/VoucherContext";
 import { usePackages } from "../context/PackageContext";
+import { CultProvider, cultData } from "../context/CultContext"; 
 
 
 const TodayDeals = () => {
@@ -34,7 +35,7 @@ const TodayDeals = () => {
     <>
       <div className='container mx-auto'>
         <Hero
-          image="/Images/Peace.jpeg" // Directly reference the image path
+          image="/Images/Exclusive22.jpeg" // Directly reference the image path
           title="Today's Deals"
           highlight="Your Dreams"
           subtitle="Limited Time Offers!"
@@ -70,8 +71,11 @@ const TodayDeals = () => {
       ...todaysDealsPackages,
     ]}
   />
-        <Cult />
-        <PromotionOffers />
+      <CultProvider value={cultData.todaysDealsCultData}>
+          <Cult />
+        </CultProvider>
+      <PromotionOffers promotionId={2} />
+      
         
         {/* Render Voucher component for Today's Deals */}
         {todaysDealsVoucher.map((voucher, index) => (
