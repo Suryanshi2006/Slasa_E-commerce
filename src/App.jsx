@@ -39,7 +39,7 @@ import Handmade from "./Sidebar/NewArrivals/Handmade";
 import Influencer from "./Sidebar/NewArrivals/Influencer";
 import Mostsold from "./Sidebar/NewArrivals/Mostsold";
 
-import Comparisons from "./Sidebar/CustomerReviewPages/Comparisons";
+// import Comparisons from "./Sidebar/CustomerReviewPages/Comparisons";
 import Verified from "./Sidebar/CustomerReviewPages/Verified";
 // import AcrylicSheet from "./Sidebar/AcrylicPages/AcrylicSheet";
 // import AcrylicWood from "./Sidebar/AcrylicPages/AcrylicWood";
@@ -440,14 +440,14 @@ const App = () => {
                   }
                 />
 
-                <Route
+                {/* <Route
                   path="/comparisons"
                   element={
                     <PageLayout>
                       <Comparisons />
                     </PageLayout>
                   }
-                />
+                /> */}
 
                 <Route
                   path="/facility"
