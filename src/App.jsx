@@ -39,7 +39,7 @@ import Handmade from "./Sidebar/NewArrivals/Handmade";
 import Influencer from "./Sidebar/NewArrivals/Influencer";
 import Mostsold from "./Sidebar/NewArrivals/Mostsold";
 
-// import Comparisons from "./Sidebar/CustomerReviewPages/Comparisons";
+
 import Verified from "./Sidebar/CustomerReviewPages/Verified";
 // import AcrylicSheet from "./Sidebar/AcrylicPages/AcrylicSheet";
 // import AcrylicWood from "./Sidebar/AcrylicPages/AcrylicWood";
@@ -51,7 +51,7 @@ import CanvasArt from "./Sidebar/UvPrinting/CanvasArt";
 import CustomeFrames from "./Sidebar/UvPrinting/CustomeFrames";
 import Decorative from "./Sidebar/UvPrinting/Decorative";
 
-import FreshFlowers from "./Sidebar/FlowersandPlantsPages/FreshFlowers";
+
 import IndoorPlants from "./Sidebar/FlowersandPlantsPages/IndoorPlants";
 import LimitedEdition from "./Sidebar/FlowersandPlantsPages/LimitedEdition";
 import OutdoorPlants from "./Sidebar/FlowersandPlantsPages/OutdoorPlants";
@@ -123,6 +123,8 @@ import Customize from "./Sidebar/Neon/Customize";
 import Checkout from "./components/Checkout";
 import MainPage from "./Dashboard/MainPage";
 import Dashboard from "./Dashboard/Dashboard";
+import FreshFlowers from "./Sidebar/FlowersandPlantsPages/FreshFlowers";
+import Comparisons from './Sidebar/CustomerReviewpages/Comparisons'
 
 
 
@@ -439,15 +441,19 @@ const App = () => {
                     </PageLayout>
                   }
                 />
-
-                {/* <Route
+                <Route
                   path="/comparisons"
                   element={
                     <PageLayout>
-                      <Comparisons />
+                      <Comparisons/>
+                
                     </PageLayout>
                   }
-                /> */}
+                />
+                
+                 
+
+              
 
                 <Route
                   path="/facility"
@@ -665,7 +671,8 @@ const App = () => {
                   path="/fresh-flowers"
                   element={
                     <PageLayout>
-                      <FreshFlowers />
+                      <FreshFlowers/>
+              
                     </PageLayout>
                   }
                 />

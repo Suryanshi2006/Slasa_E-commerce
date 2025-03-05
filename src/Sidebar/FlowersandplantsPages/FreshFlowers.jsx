@@ -99,4 +99,4 @@ buttonLink={voucher.buttonLink}
 )
 }
 
-export default FreshFlowers
+export default FreshFlowers;
