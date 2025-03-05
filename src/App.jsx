@@ -52,7 +52,7 @@ import CustomeFrames from "./Sidebar/UvPrinting/CustomeFrames";
 import Decorative from "./Sidebar/UvPrinting/Decorative";
 
 
-import IndoorPlants from "./Sidebar/FlowersandPlantsPages/IndoorPlants";
+
 import LimitedEdition from "./Sidebar/FlowersandPlantsPages/LimitedEdition";
 import OutdoorPlants from "./Sidebar/FlowersandPlantsPages/OutdoorPlants";
 
@@ -125,6 +125,7 @@ import MainPage from "./Dashboard/MainPage";
 import Dashboard from "./Dashboard/Dashboard";
 import FreshFlowers from "./Sidebar/FlowersandPlantsPages/FreshFlowers";
 import Comparisons from './Sidebar/CustomerReviewpages/Comparisons'
+import IndoorPlants from './Sidebar/FlowersandplantsPages/IndoorPlants'
 
 
 
@@ -676,14 +677,15 @@ const App = () => {
                     </PageLayout>
                   }
                 />
-                <Route
-                  path="/indoor-plants"
-                  element={
-                    <PageLayout>
-                      <IndoorPlants />
-                    </PageLayout>
-                  }
-                />
+            <Route 
+            path="/indoor-plants"
+            element={
+              <PageLayout>
+                <IndoorPlants/>
+         
+              </PageLayout>
+            }
+            />
                 <Route
                   path="/outdoor-plants"
                   element={
