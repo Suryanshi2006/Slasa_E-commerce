@@ -1,11 +1,15 @@
 /* Global styles to prevent overflow */
-html, body {
-  width: 100vw;
-  height: 100vh;
+* {
   margin: 0;
   padding: 0;
-  overflow-x: hidden !important; /* Prevents horizontal scrolling */
+  box-sizing: border-box;
 }
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevents side scrolling */
+}
+
 
 /* Root container */
 #root {
@@ -34,17 +38,22 @@ html, body {
 
 /* Main content area */
 .main-content {
-  flex-grow: 1; /* Takes remaining space */
-  margin-left: 250px; /* Pushes content to the right */
-  margin-top: 60px; /* Adjust according to your header height */
+  flex-grow: 1;
+  margin-left: 0px; /* Keeps space for sidebar */
+  margin-top: 60px;
   padding: 20px;
   background-color: #f8f8f8;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch; /* Change from center to stretch */
   justify-content: flex-start;
-  overflow-x: hidden; /* Prevents horizontal scroll */
+  overflow-x: hidden;
 }
+.auth-page .main-content {
+  margin-left: 0 !important; /* Remove left margin for full width */
+  align-items: center; /* Center align the form if needed */
+}
+
 
 /* Ensure content inside main-content is full width */
 .content-container {

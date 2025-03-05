@@ -40,7 +40,7 @@ const description = "Explore our timeless collection of top-rated products, cons
 
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/AcrylicWood.avif" // Directly reference the image path
   title="Strength Meets Elegance"

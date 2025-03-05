@@ -39,7 +39,7 @@ const Clearance = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/New2.jpg" // Directly reference the image path
   title="Final Call"

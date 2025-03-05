@@ -39,7 +39,7 @@ const Comparisons = () => {
                 
   return (
    <>
-    <div className='container mx-auto'>
+    <div >
     <Hero
   image="/Images/Exclusive2.jpeg" // Directly reference the image path
   title="See the Difference"

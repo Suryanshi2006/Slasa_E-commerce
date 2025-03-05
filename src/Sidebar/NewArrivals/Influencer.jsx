@@ -39,7 +39,7 @@ const Influencer = () => {
       
 return (
 <>
-<div className='container mx-auto'>
+<div>
 <Hero
   image="/Images/Exclusive28.jpeg" // Directly reference the image path
   title="Trendy"
