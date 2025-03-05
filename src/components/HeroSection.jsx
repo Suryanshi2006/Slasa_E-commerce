@@ -30,7 +30,7 @@ const HeroSection = () => {
       {/* First Section */}
       <div className="flex items-center justify-center gap-4">
         <h1 className="text-2xl font-bold text-[#3087d1] flex-shrink-0">
-          {heroData?.title || "Luxury, Style and Comfort"}
+          {heroData?.title || "The Ramadan Presents"}
         </h1>
         <span className="w-96 h-1 bg-[#3087d1]"></span>
       </div>
