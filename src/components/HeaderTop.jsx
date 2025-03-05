@@ -6,7 +6,7 @@ const HeaderTop = () => {
   const [isAreaOpen, setIsAreaOpen] = useState(false);
 
   return (
-    <div className="bg-black text-white py-4 px-4 flex items-center flex-wrap">
+    <div className="bg-black text-white py-4 px-4 flex items-center flex-wrap overflow-hidden">
       {/* Left Section (Hide on smaller screens) */}
       <div className="hidden sm:flex items-center gap-4 flex-wrap">
         <div className="flex items-center gap-2 cursor-pointer px-3 py-1 rounded-md hover:bg-gray-800 transition">

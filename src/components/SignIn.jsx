@@ -39,8 +39,11 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#3087d1]">
-      <div className="bg-white p-10 rounded-3xl shadow-xl w-full max-w-lg">
+<div className="flex min-h-screen items-center justify-center bg-[#3087d1] w-full px-4">
+  <div className="bg-white p-10 rounded-3xl shadow-xl w-full max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl">
+
+
+
         <h2 className="text-3xl font-extrabold text-center text-[#3087d1] mb-8">Sign In</h2>
         
         <form onSubmit={handleSubmit}>
@@ -70,7 +73,7 @@ const SignIn = () => {
 
           <button 
             type="submit" 
-            className="w-full bg-[#3087d1] text-white py-3 rounded-xl hover:bg-[#4c6ef5] transition-all duration-300 transform active:scale-95"
+            className="w-full !bg-[#3087d1] text-white py-3 rounded-xl hover:bg-[#4c6ef5] transition-all duration-300 transform active:scale-95"
             disabled={loading}
           >
             {loading ? "Signing In..." : "Sign In"}

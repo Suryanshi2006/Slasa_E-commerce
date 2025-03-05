@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 
 const YourAccount = () => {
   return (
-    <div className="min-h-screen  flex items-center justify-center px-6 py-12">
+    <div className="min-h-screen  flex items-center justify-center px-6 py-12 overflow-x-hidden">
       <motion.div
         className="w-full max-w-5xl bg-white shadow-2xl rounded-2xl overflow-hidden"
         initial={{ opacity: 0, y: 20 }}

@@ -40,7 +40,7 @@ const NewArrivals = () => {
 
   return (
     <>
-      <div className="container mx-auto">
+      <div className="">
         <Hero
           image="/Images/sales.jpg" // Directly reference the image path
           title="Today's Deals"

@@ -40,7 +40,7 @@ const Photography = () => {
     "Explore our curated selection of high-quality cameras, lenses, and accessories for every photography enthusiast.";
 
   return (
-    <div className="container mx-auto">
+    <div className="">
       <Hero
         image="/Images/HeroPhoto.jpeg" // Directly reference the image path
         title="Bringing"

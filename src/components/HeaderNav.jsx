@@ -44,7 +44,7 @@ const HeaderNav = () => {
   };
 
   return (
-    <header className="bg-gray-900 text-white px-4 py-3">
+    <header className="bg-gray-900 text-white px-4 py-3 overflow-hidden">
       <div className="flex items-center justify-between max-w-[1400px] mx-auto flex-wrap">
         {/* Logo */}
         <div className="flex items-center bg-white px-4 py-2 border-2 rounded-md shadow-md cursor-pointer">

@@ -40,7 +40,7 @@ const Construction = () => {
     "Browse our premium construction materials designed to provide the highest quality for your building projects.";
 
   return (
-    <div className="container mx-auto">
+    <div className="">
       <Hero
         image="/Images/HeroConstruction.jpeg" // Directly reference the image path
         title="Building"
@@ -56,8 +56,15 @@ const Construction = () => {
         <ProductCard />
         <ProductList />
       </div>
+     
 
       <HeroSection />
+      <CultProvider value={cultData.constructionCultData}>
+          <Cult />
+        </CultProvider>
+      <PromotionOffers promotionId={2} />
+      
+      
 
       <a href="/your-target-page" className="block w-full">
         <div className="flex justify-center w-full max-w-screen-lg mx-auto !px-8 mt-8 mb-8">

@@ -5,7 +5,7 @@ const Cult = () => {
   const imageData = useCult(); // Get data from context
 
   return (
-    <div className="max-w-screen-lg mx-auto px-4 mt-10">
+    <div className="max-w-screen-lg mx-auto px-4 mt-10 overflow-hidden">
       <h2 className="text-4xl font-bold mb-6">Cult Favourite</h2>
       <div className="grid grid-cols-2 gap-24">
         {imageData.map((item) => (

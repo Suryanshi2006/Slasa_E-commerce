@@ -39,7 +39,7 @@ const Printing = () => {
     "Explore our wide range of printing products, including high-quality printers, inks, and paper for all your printing needs.";
 
   return (
-    <div className="container mx-auto">
+    <div className="">
       <Hero
         image="/Images/HeroPrint.jpeg" // Directly reference the image path
         title="Printing"

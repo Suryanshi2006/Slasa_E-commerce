@@ -33,7 +33,7 @@ const TodayDeals = () => {
 
   return (
     <>
-      <div className='container mx-auto'>
+      <div className='px-4'>
         <Hero
           image="/Images/Exclusive22.jpeg" // Directly reference the image path
           title="Today's Deals"

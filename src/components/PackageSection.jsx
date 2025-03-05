@@ -5,7 +5,7 @@ const PackageSection = ({ packages = [] }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="relative bg-[#3087d1] opacity-80 text-white py-10 px-10 container mx-auto">
+    <div className="relative bg-[#3087d1] opacity-70 text-white py-10 px-10 overflow-hidden">
       {/* Header */}
       <div className="flex justify-center">
         <h2 className="text-3xl font-bold">Packages</h2>

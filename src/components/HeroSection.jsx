@@ -26,7 +26,7 @@ const HeroSection = () => {
   
 
   return (
-    <div className="text-center py-10 w-full bg-gray-200 container mx-auto">
+    <div className="text-center py-10 w-full  overflow-hidden ">
       {/* First Section */}
       <div className="flex items-center justify-center gap-4">
         <h1 className="text-2xl font-bold text-[#3087d1] flex-shrink-0">
