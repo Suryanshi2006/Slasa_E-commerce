@@ -10,31 +10,70 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [pincode, setPincode] = useState("");
   const [deliveryMessage, setDeliveryMessage] = useState("");
-  const [cart, setCart] = useState([]); // Cart state
   const [isAddedToCart, setIsAddedToCart] = useState(false);
 
-  // Fetch product if not in state
+  // Fetch product if not available in state
   useEffect(() => {
-    if (!product) {
-      axios.get(`https://dummyjson.com/products/${id}`).then((response) => {
-        setProduct(response.data);
-      });
+    if (!initialProduct) {
+      axios.get(`https://run.mocky.io/v3/ee83b3db-2f99-45c4-b963-47a38b571a30${id}`)
+        .then((response) => {
+          setProduct({
+            ...response.data,
+            deliveryInfo: response.data.deliveryInfo || {
+              estimatedDelivery: "5-7 Business Days",
+              returnPolicy: "30-Day Return Policy",
+              cashOnDelivery: true
+            }
+          });
+        })
+        .catch(error => console.error("Error fetching product details", error));
     }
-  }, [id, product]);
+  }, [id, initialProduct]);
 
   if (!product) return <p className="text-center text-gray-600 mt-20">Loading product...</p>;
 
   const discountedPrice = (product.price * (1 - product.discountPercentage / 100)).toFixed(2);
 
+  // Pincode validation (Using API)
   const checkPincode = () => {
-    setDeliveryMessage(pincode.length === 6 ? "✅ Deliverable to your location!" : "❌ Please enter a valid 6-digit pincode.");
+    if (/^\d{6}$/.test(pincode)) {
+      axios.post("https://api.yoursite.com/check-pincode", { pincode })
+        .then(response => {
+          setDeliveryMessage(response.data.deliverable 
+            ? `✅ ${response.data.message}`
+            : "❌ Not deliverable to your location."
+          );
+        })
+        .catch(error => console.error("Error checking pincode", error));
+    } else {
+      setDeliveryMessage("❌ Please enter a valid 6-digit pincode.");
+    }
   };
 
-  // Handle Add to Cart
+  // Handle Add to Cart (Using API)
   const handleAddToCart = () => {
-    const newCartItem = { ...product, quantity };
-    setCart([...cart, newCartItem]);
-    setIsAddedToCart(true);
+    axios.post("https://api.yoursite.com/cart", {
+      userId: "1234",  // Replace with actual user ID from authentication
+      productId: product.id,
+      quantity
+    })
+    .then(() => {
+      setIsAddedToCart(true);
+    })
+    .catch(error => console.error("Error adding to cart", error));
+  };
+
+  // Handle Buy Now (Checkout API)
+  const handleBuyNow = () => {
+    axios.post("https://api.yoursite.com/checkout", {
+      userId: "1234", // Replace with actual user ID
+      products: [{ productId: product.id, quantity }],
+      paymentMethod: "COD"  // Add payment method dynamically
+    })
+    .then(response => {
+      alert(`Order Placed! Order ID: ${response.data.orderId}`);
+    })
+    .catch(error => console.error("Error processing checkout", error));
   };
 
   return (
@@ -92,14 +131,14 @@ const ProductDetail = () => {
           <div className="flex items-center mt-6">
             <span className="mr-3 font-medium">Quantity:</span>
             <button
-              className="px-4 py-2 !bg-gray-800 text-white rounded-l-md hover:bg-blue-700 transition"
+              className="px-4 py-2 bg-gray-800 text-white rounded-l-md hover:bg-blue-700 transition"
               onClick={() => setQuantity(q => Math.max(1, q - 1))}
             >
               -
             </button>
             <span className="px-5 py-2 border">{quantity}</span>
             <button
-              className="px-4 py-2  !bg-gray-800 text-white rounded-r-md hover:bg-blue-700 transition"
+              className="px-4 py-2 bg-gray-800 text-white rounded-r-md hover:bg-blue-700 transition"
               onClick={() => setQuantity(q => q + 1)}
             >
               +
@@ -108,12 +147,14 @@ const ProductDetail = () => {
 
           {/* Buttons */}
           <div className="mt-6 flex gap-4">
-            <button className="w-full !bg-[#3087d1] text-white py-3 rounded-lg hover:bg-green-600 transition text-lg">
+            <button 
+              onClick={handleBuyNow} 
+              className="w-full bg-[#3087d1] text-white py-3 rounded-lg hover:bg-green-600 transition text-lg">
               Buy Now
             </button>
             <button
               className={`w-full py-3 rounded-lg text-lg transition ${
-                isAddedToCart ? "bg-gray-500 cursor-not-allowed" : "!bg-[#3087d1] hover:bg-blue-600"
+                isAddedToCart ? "bg-gray-500 cursor-not-allowed" : "bg-[#3087d1] hover:bg-blue-600"
               } text-white`}
               onClick={handleAddToCart}
               disabled={isAddedToCart}
@@ -135,30 +176,12 @@ const ProductDetail = () => {
               />
               <button
                 onClick={checkPincode}
-                className="ml-3 !bg-[#3087d1] text-white px-5 py-3 rounded-lg hover:bg-blue-700 transition"
+                className="ml-3 bg-[#3087d1] text-white px-5 py-3 rounded-lg hover:bg-blue-700 transition"
               >
                 Check
               </button>
             </div>
-            <p className={`mt-3 text-lg ${pincode.length === 6 ? "text-green-600" : "text-red-500"}`}>
-              {deliveryMessage}
-            </p>
-          </div>
-
-          {/* Extra Info */}
-          <div className="mt-6 flex items-center gap-6 text-gray-700 text-sm">
-            <div className="flex items-center gap-2">
-              <span className="text-black">📦</span>
-              <p>Get it by THU, 20 Aug</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-black">🔄</span>
-              <p>Easy Return Available</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-black">💰</span>
-              <p>Cash on Delivery Available</p>
-            </div>
+            <p className="mt-3 text-lg">{deliveryMessage}</p>
           </div>
         </div>
       </div>

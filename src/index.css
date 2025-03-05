@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/roboto/700.css';
+
 :root {
   font-family: Palatino, serif;
   line-height: 1.5;
@@ -67,3 +72,74 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+body {
+  background: #f1f1f1;
+}
+
+.main .sidebarWrapper {
+  height: 100vh;
+}
+
+
+      
+      /* Add hover effect to make it visible */
+      .main .sidebarWrapper .sidebar .sidebarTabs button:hover::before,
+      .main .sidebarWrapper .sidebar .sidebarTabs button.active::before {
+        height: 100%;
+        opacity: 1;
+        top: 0px;
+      }
+      /* Sidebar General Styles */
+.sidebar {
+
+  background-color: #2424c8;
+  color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Sidebar Button */
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+}
+
+.sidebar-btn:hover {
+  background-color: #3087d1;
+  color: black;
+
+}
+
+/* Sidebar Icons */
+.icon {
+  font-size: 20px;
+}
+
+/* Sidebar Submenu */
+.submenu-item {
+  display: block;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #bbb;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.submenu-item:hover {
+  color: white;
+  border-left: 3px solid #3087d1;
+}
+
+      
+
+
+
+

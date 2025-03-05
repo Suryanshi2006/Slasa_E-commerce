@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import ProductCard from "./ProductCard";
+import Acrylic from "../pages/Acrylic";
 
 const ProductList = () => {
   const { category } = useParams(); // Get category from URL
@@ -13,10 +14,12 @@ const ProductList = () => {
     setLoading(true);
     setError(null);
 
-    let apiUrl = "https://dummyjson.com/products";
+    let apiUrl = "https://dummyjson.com/products?limit=8"; // Fetch only 10 products
+
     if (category && category !== "all") {
-      apiUrl = `https://dummyjson.com/products/category/${category}`;
+      apiUrl = `https://dummyjson.com/products/category/${Acrylic}?limit=8`; // Fetch only 10 products from a category
     }
+    
 
     axios
       .get(apiUrl)
@@ -31,7 +34,7 @@ const ProductList = () => {
   }, [category]); // Refetch when category changes
 
   return (
-    <div className="container mx-auto px-6 py-5 bg-white">
+    <div className=" px-6 py-5 bg-white">
       {loading && <p>Loading products...</p>}
       {error && <p className="text-red-500">Error: {error}</p>}
       <div className="flex gap-16 justify-center flex-wrap">

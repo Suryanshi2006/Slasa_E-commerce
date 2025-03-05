@@ -6,10 +6,11 @@ const HomeCategories = () => {
     { id: 1, title: "Wardrobe" },
     { id: 2, title: "NightStands" },
     { id: 3, title: "Chest of Drawers" },
+    
   ];
 
   return (
-    <div className="text-center mt-6">
+    <div className="text-center mt-6 overflow-hidden">
       {/* Categories List */}
       <div className="mt-4 grid grid-cols-3 gap-24 px-8">
         {Categories.map((category) => (

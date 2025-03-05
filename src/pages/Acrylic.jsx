@@ -41,7 +41,7 @@ const Acrylic = () => {
 
   return (
     <>
-      <div className="container mx-auto">
+      <div >
         <Hero
           image="/Images/Exclusive11.jpeg"
           title="Crafting"

@@ -46,17 +46,13 @@ const Home = () => {
     "Discover our best-selling products, carefully selected to meet all your needs for home renovation and construction projects.";
 
   return (
-    <div
-      style={{
-        backgroundColor: "white",
-        minHeight: "100vh",
-        width: "100vw",
-        overflowX: "hidden",
-      }}
-    >
-      <div className="container mx-auto">
+    <div className="bg-white min-h-screen w-full overflow-hidden m-0 p-0">
+
+
+      <div className=" min-h-screen overflow-hidden bg-white">
+
         <Hero
-          image="/Images/Building.webp" // Directly reference the image path
+          image="/Images/Bathroom.avif" // Directly reference the image path
           title="Discover"
           highlight="Slasa's World"
           subtitle="Where Innovation Meets Quality"
@@ -64,10 +60,10 @@ const Home = () => {
           buttonLink="/explore"
         />
 
-        <ProductSection title={title} description={description} />
+        <ProductSection title={title} description={description} mt-20 />
       </div>
 
-      <div className="flex justify-center gap-4 flex-wrap p-4">
+      <div className="flex justify-center gap-4 flex-wrap p-4 mt-[-70px]">
         <ProductCard />
         <ProductList />
       </div>

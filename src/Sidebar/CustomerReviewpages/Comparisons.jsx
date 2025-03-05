@@ -100,4 +100,4 @@ const Comparisons = () => {
   )
 }
 
-export default Comparisons
+export default Comparisons;

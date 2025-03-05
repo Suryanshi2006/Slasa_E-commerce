@@ -2,7 +2,7 @@ import React from 'react';
 
 const Voucher = ({ title, subtitle, discount, sale, categories, imageUrl, buttonText, buttonLink }) => {
   return (
-    <div className="container mx-auto mt-10 mb-6 bg-gray-200 p-6 rounded-lg shadow-lg">
+    <div className=" mt-10 mb-6 bg-gray-200 p-6 rounded-lg shadow-lg">
       {/* Header */}
       <div className="text-center">
         <h1 className="text-3xl font-bold text-[#3087d1]">{title}</h1>

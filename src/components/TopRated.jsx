@@ -7,7 +7,7 @@ const TopRated = () => {
   const description = "Explore the best materials for your construction and renovation projects.";
  
   return (
-    <div className='container mx-auto'>
+    <div >
       <ProductSection 
         title={title} 
         description={description} 

@@ -2,10 +2,10 @@ import React from 'react';
 
 const ProductSection = ({ title, description }) => {
   return (
-    <div className='container mx-auto mt-2'>
-      <div className='bg-black pl-40 text-white py-4 '>
-        <h1>{title}</h1> {/* Dynamic title */}
-        <p>{description}</p> {/* Dynamic description */}
+    <div className="w-screen"> {/* Full width */}
+      <div className="bg-black pl-10 text-white py-4 w-full max-w-none"> 
+        <h1 className="text-2xl font-bold">{title}</h1> {/* Larger title */}
+        <p className="text-lg">{description}</p> {/* Bigger text */}
       </div>
     </div>
   );

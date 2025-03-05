@@ -40,7 +40,7 @@ const Renovation = () => {
     "Find everything you need for your next renovation project, including tools, paint, flooring, and more.";
 
   return (
-    <div className="container mx-auto">
+    <div className="">
       <Hero
         image="/Images/HeroRenoovation.jpeg" // Directly reference the image path
         title="Transforming"

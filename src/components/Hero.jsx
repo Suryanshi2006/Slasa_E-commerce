@@ -2,16 +2,19 @@ import React from "react";
 
 const Hero = ({ image, title, highlight, subtitle, buttonText, buttonLink }) => {
   return (
-    <div className="relative w-full h-[500px] flex items-center justify-center bg-blue-100">
-      {/* Background Image */}
-      <img
-        src={image}
-        alt="Hero Background"
-        className="w-full h-full object-cover"
-      />
+<div className="relative w-screen min-h-[500px] pt-[180px] flex justify-start bg-[#000] !overflow-hidden">
 
-      {/* Overlay Content */}
-      <div className="absolute bottom-10 left-20 text-center text-white">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-screen h-full overflow-hidden">
+        <img
+          src={image}
+          alt="Hero Background"
+          className="w-full h-full object-cover max-w-none  "
+        />
+      </div>
+
+      {/* Overlay Content - Fixed to Left Side */}
+      <div className="absolute left-10 bottom-10 lg:left-10 z-10 text-left text-white px-6">
         <h1 className="text-4xl font-bold">
           {title} <span className="text-blue-500">{highlight}</span>,<br />
           {subtitle}
