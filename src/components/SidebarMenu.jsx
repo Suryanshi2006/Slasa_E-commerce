@@ -103,6 +103,8 @@ const SideMenu = ({ isOpen, onClose }) => {
         </ExpandableMenu>
       </MenuSection>
 
+
+
       <MenuSection title="Shop">
         <ExpandableMenu
           title="Acrylic Accessories ✨"
@@ -156,6 +158,9 @@ const SideMenu = ({ isOpen, onClose }) => {
           <MenuItem text="Office & Event" link="/office-&-event"/>
           <MenuItem text="Customize" link="/customize"/>
         </ExpandableMenu>
+
+
+
 
         <ExpandableMenu
           title="Flowers & Plants "
@@ -441,7 +446,7 @@ const styles = {
     overflowY: "auto",
     transition: "transform 0.3s ease-in-out",
     padding: "10px 15px",
-    zIndex: 1000,
+    zIndex: 100,
   },
   closeButton: {
     position: "absolute",

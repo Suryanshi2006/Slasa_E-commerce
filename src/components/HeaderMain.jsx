@@ -58,12 +58,16 @@ const HeaderMain = () => {
   } w-full lg:w-auto mt-2 lg:mt-0 md:flex-nowrap`}
 >
   <CategoryItem title="Acrylic Accessories" path="/acrylic" onClick={closeCategories} />
-  <CategoryItem title="New Arrivals" path="/new" onClick={closeCategories} />
+  <CategoryItem title="Shop" path="/renovation" onClick={closeCategories} />
   <CategoryItem title="Today's Deal" path="/deals" onClick={closeCategories} />
+    <CategoryItem title="New Arrivals" path="/new" onClick={closeCategories} />
   <CategoryItem title="Printing Services" path="/printing" onClick={closeCategories} />
   <CategoryItem title="Photography & Videography" path="/photography" onClick={closeCategories} />
-  <CategoryItem title="Construction" path="/construction" onClick={closeCategories} />
+  
   <CategoryItem title="Home Renovation" path="/renovation" onClick={closeCategories} />
+  <CategoryItem title="Construction" path="/construction" onClick={closeCategories} />
+  
+
 </div>
 
 

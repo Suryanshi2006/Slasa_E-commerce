@@ -39,9 +39,9 @@ const FlashDeals = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
-  image="/Images/Exclusive15.jpeg" // Directly reference the image path
+  image="/Images/Exclusive13.jpeg" // Directly reference the image path
   title="Limited Time"
   highlight="Flash Deals"
   subtitle="Grab the Best Acrylic Deals Before They're Gone!"

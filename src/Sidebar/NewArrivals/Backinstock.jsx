@@ -39,7 +39,7 @@ const Backinstock = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Exclusive26.jpeg" // Directly reference the image path
   title="They're Back!"

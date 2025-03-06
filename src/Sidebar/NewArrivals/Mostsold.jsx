@@ -39,7 +39,7 @@ const Mostsold = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Exclusive7.jpeg" // Directly reference the image path
   title="Top Picks"

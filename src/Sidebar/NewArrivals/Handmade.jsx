@@ -39,7 +39,7 @@ const Handmade = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Exclusive11.jpeg" // Directly reference the image path
   title="Artisanal"

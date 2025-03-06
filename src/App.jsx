@@ -21,6 +21,25 @@ import Photography from "./pages/Photography";
 import Printing from "./pages/Printing";
 import Wishlist from "./components/WishList";
 import AccountSettings from "./components/AccountSettings";
+import NewArrivals from './pages/NewArrivals'
+import { useState } from "react";
+import SidebarMenu from "./components/SidebarMenu";
+import AcrylicSheet from "./Sidebar/AcrylicPages/AcrylicSheet";
+import AcrylicWood from "./Sidebar/AcrylicPages/AcrylicWood"
+import MWood from "./Sidebar/AcrylicPages/MWood";
+import Top from "./Sidebar/BestSellerPages/Top";
+import AllTimeBest from "./Sidebar/BestSellerPages/AllTimeBest";
+import StaffPick from "./Sidebar/BestSellerPages/StaffPick";
+import Exclusive from "./Sidebar/BestSellerPages/Exclusive";
+import FlashDeals from "./Sidebar/TrendingProductsPages/FlashDeals"
+import BundleOffers from './Sidebar/TrendingProductsPages/BundleOffers'
+import Clearance from "./Sidebar/TrendingProductsPages/Clearance";
+import Handmade from "./Sidebar/NewArrivals/Handmade"
+import Backinstock from "./Sidebar/NewArrivals/Backinstock"
+import Influencer from "./Sidebar/NewArrivals/Influencer"
+import Mostsold from "./Sidebar/NewArrivals/Influencer"
+import Verified from "./Sidebar/CustomerReviewpages/Verified";
+import Comparisons from "./Sidebar/CustomerReviewpages/Comparisons";
 
 
 
@@ -32,10 +51,13 @@ import AccountSettings from "./components/AccountSettings";
 
 
 const App = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     
     <Router>
+            <SidebarMenu isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
+     <div style={styles.pageContainer}>
       <PackageProvider>
         <VoucherProvider>
           <PromotionProvider>
@@ -62,14 +84,7 @@ const App = () => {
                 
                
                
-                  <Route
-                  path="/accountsettings"
-                  element={
-                    <PageLayout>
-                      <AccountSettings />
-                    </PageLayout>
-                  }
-                />
+                 
                 <Route
                   path="/construction"
                   element={
@@ -83,6 +98,15 @@ const App = () => {
                   element={
                     <PageLayout>
                       <Rennovation />
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/new"
+                  element={
+                    <PageLayout>
+                      <NewArrivals/>
+                  
                     </PageLayout>
                   }
                 />
@@ -116,6 +140,14 @@ const App = () => {
                   element={
                     <PageLayout>
                       <CustomerSection />
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/account"
+                  element={
+                    <PageLayout>
+                      <AccountSettings/>
                     </PageLayout>
                   }
                 />
@@ -164,6 +196,161 @@ const App = () => {
                     </PageLayout>
                   }
                 />
+
+                {/* routing for the sidebar pages */}
+                {/* Routing for the acrylic pages */}
+                <Route
+                  path="/sheets"
+                  element={
+                    <PageLayout>
+                  <AcrylicSheet/>
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/wood"
+                  element={
+                    <PageLayout>
+                      <AcrylicWood/>
+                
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/mwood"
+                  element={
+                    <PageLayout>
+                   <MWood/>
+                
+                    </PageLayout>
+                  }
+                />
+             {/* Routing for the best sellers */}
+                  <Route
+                  path="/top"
+                  element={
+                    <PageLayout>
+                      <Top/>
+           
+                
+                    </PageLayout>
+                  }
+                />
+                  <Route
+                  path="/all-time-best"
+                  element={
+                    <PageLayout>
+                    <AllTimeBest/>
+           
+                
+                    </PageLayout>
+                  }
+                />
+                  <Route
+                  path="/staff-pick"
+                  element={
+                    <PageLayout>
+                    <StaffPick/>
+           
+                
+                    </PageLayout>
+                  }
+                />
+                  <Route
+                  path="/exclusive"
+                  element={
+                    <PageLayout>
+                  <Exclusive/>
+           
+                
+                    </PageLayout>
+                  }
+                />
+                {/* Routing for the Trending products */}
+                <Route
+                  path="/flash-deals"
+                  element={
+                    <PageLayout>
+                   <FlashDeals/>
+           
+                
+                    </PageLayout>
+                  }
+                />
+
+                   <Route
+                  path="/bundle-offers"
+                  element={
+                    <PageLayout>
+                <BundleOffers/>
+           
+                
+                    </PageLayout>
+                  }
+                />
+
+<Route
+                  path="/clearance"
+                  element={
+                    <PageLayout>
+                    <Clearance/>
+                    </PageLayout>
+                  }
+                />
+
+                {/* Routing for New Arrivals  */}
+                <Route
+                  path="/handmade"
+                  element={
+                    <PageLayout>
+                  <Handmade/>
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/back-in-stock"
+                  element={
+                    <PageLayout>
+                <Backinstock/>
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/influencer"
+                  element={
+                    <PageLayout>
+             <Influencer/>
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/most-sold"
+                  element={
+                    <PageLayout>
+                <Mostsold/>
+                    </PageLayout>
+                  }
+                />
+                {/* Routing for Customer Reviews */}
+                
+                <Route
+                  path="/verified"
+                  element={
+                    <PageLayout>
+                      <Verified/>
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/comparisons"
+                  element={
+                    <PageLayout>
+        <Comparisons/>
+                    </PageLayout>
+                  }
+                />
+
+               
                 <Route path="/signin" element={ <PageLayout>
                     <SignIn/>
                     </PageLayout>} />
@@ -175,8 +362,19 @@ const App = () => {
           </PromotionProvider>
         </VoucherProvider>
       </PackageProvider>
+      </div>
     </Router>
   );
 };
+const styles = {
+  pageContainer: {
+    width: "100vw",
+    minHeight: "100vh",
+    padding: 0, // Remove any extra padding
+    margin: 0,  // Remove any extra margin
+    backgroundColor: "#f9f9f9",
+  },
+};
+
 
 export default App;

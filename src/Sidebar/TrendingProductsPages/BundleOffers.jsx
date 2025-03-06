@@ -39,10 +39,10 @@ const BundleOffers = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 
 <Hero
-  image="/Images/Exclusive17.jpeg" // Directly reference the image path
+  image="/Images/Exclusive27.jpeg" // Directly reference the image path
   title="Exclusive"
   highlight="Bundle Offers"
   subtitle="Get More & Save More with Special Bundles"

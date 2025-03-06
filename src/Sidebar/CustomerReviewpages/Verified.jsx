@@ -39,7 +39,7 @@ const Verified = () => {
                   
   return (
   <>
-   <div className='container mx-auto'>
+   <div >
    <Hero
   image="/Images/Exclusive27.jpeg" // Directly reference the image path
   title="Trusted by Many"

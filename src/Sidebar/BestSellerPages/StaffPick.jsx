@@ -41,7 +41,7 @@ const StaffPick = () => {
 
   return (
     <>
-    <div className='container mx-auto'>
+    <div >
     <Hero
   image="/Images/BestSeller1.avif" // Directly reference the image path
   title="Handpicked"
