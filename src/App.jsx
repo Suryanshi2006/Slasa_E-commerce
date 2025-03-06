@@ -40,6 +40,20 @@ import Influencer from "./Sidebar/NewArrivals/Influencer"
 import Mostsold from "./Sidebar/NewArrivals/Influencer"
 import Verified from "./Sidebar/CustomerReviewpages/Verified";
 import Comparisons from "./Sidebar/CustomerReviewpages/Comparisons";
+import Shop from "./pages/Shop";
+import CustomeFrames from "./Sidebar/UvPrinting/CustomeFrames"
+import Acrylicprints from "./Sidebar/UvPrinting/CustomeFrames"
+import Decorative from "./Sidebar/UvPrinting/CustomeFrames"
+import CanvasArt from "./Sidebar/UvPrinting/CustomeFrames"
+import Easel from "./Sidebar/Wood/Easel";
+import WoodSheets from "./Sidebar/Wood/WoodSheets";
+import WoodShelves from "./Sidebar/Wood/WoodShelves";
+import WoodFrame from "./Sidebar/Wood/WoodFrame";
+import Ramdan from "./Sidebar/Wood/Ramdan";
+import Customize from "./Sidebar/Neon/Customize";
+import Celebration from "./Sidebar/Neon/Celebration";
+import Festival from "./Sidebar/Neon/Festival";
+import OfficeEvent from "./Sidebar/Neon/OfficeEvent";
 
 
 
@@ -106,6 +120,15 @@ const App = () => {
                   element={
                     <PageLayout>
                       <NewArrivals/>
+                  
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/shop"
+                  element={
+                    <PageLayout>
+                     <Shop/>
                   
                     </PageLayout>
                   }
@@ -345,10 +368,123 @@ const App = () => {
                   path="/comparisons"
                   element={
                     <PageLayout>
-        <Comparisons/>
+                      <Comparisons/>
                     </PageLayout>
                   }
                 />
+                {/* Routing for the uv printing pages */}
+                <Route
+                  path="/custome-frames"
+                  element={
+                    <PageLayout>
+                      <CustomeFrames/>
+
+                  
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/acrylic-prints"
+                  element={
+                    <PageLayout>
+                  <Acrylicprints/>
+                    </PageLayout>
+                  }
+                />
+                
+                 <Route
+                  path="/canvas-art"
+                  element={
+                    <PageLayout>
+                     <CanvasArt/>
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/decorative"
+                  element={
+                    <PageLayout>
+                     <Decorative/>
+                    </PageLayout>
+                  }
+                />
+                {/* Routing for the Wood Pages in the sidebar */}
+                <Route
+                  path="/easel"
+                  element={
+                    <PageLayout>
+                   <Easel/>
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/wood-Sheet"
+                  element={
+                    <PageLayout>
+                    <WoodSheets/>
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/wood-shelves"
+                  element={
+                    <PageLayout>
+                    <WoodShelves/>
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/wood-frame"
+                  element={
+                    <PageLayout>
+                    <WoodFrame/>
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/ramadan-&-Eid-Wood"
+                  element={
+                    <PageLayout>
+                <Ramdan/>
+                    </PageLayout>
+                  }
+                />
+
+                {/* Routing for the Neon pages */}
+                <Route
+                  path="/customize"
+                  element={
+                    <PageLayout>
+              <Customize/>
+                    </PageLayout>
+                  }
+                />
+                  <Route
+                  path="/celebration-neon"
+                  element={
+                    <PageLayout>
+             <Celebration/>
+                    </PageLayout>
+                  }
+                />
+                  <Route
+                  path="/festival-neon"
+                  element={
+                    <PageLayout>
+        <Festival/>
+                    </PageLayout>
+                  }
+                />
+                  <Route
+                  path="/office-&-event"
+                  element={
+                    <PageLayout>
+           <OfficeEvent/>
+                    </PageLayout>
+                  }
+                />
+                
+
 
                
                 <Route path="/signin" element={ <PageLayout>

@@ -12,6 +12,7 @@ import Voucher from "../components/Voucher";
 import { useVouchers } from "../context/VoucherContext";
 import { usePackages } from "../context/PackageContext";
 import { CultProvider, cultData } from "../context/CultContext"; // ✅ Import CultProvider & cultData
+import Footer from "../components/Footer";
 
 const Acrylic = () => {
   const {
@@ -89,6 +90,7 @@ const Acrylic = () => {
             buttonLink={voucher.buttonLink}
           />
         ))}
+        <Footer/>
       </div>
     </>
   );

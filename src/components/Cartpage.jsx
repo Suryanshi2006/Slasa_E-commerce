@@ -99,7 +99,7 @@ const CartPage = () => {
           )}
         </div>
 
-        <div className="md:w-1/2 w-full mt-34 p-8 bg-white rounded-lg shadow-md h-[350px]">
+        <div className="md:w-1/2 w-full mt-20 p-10 bg-white rounded-lg shadow-md h-[350px]">
           <h2 className="text-xl font-bold mb-5 text-[#3087d1]">Order Summary</h2>
           <div className="mb-3">
             <p className="flex justify-between text-gray-700">

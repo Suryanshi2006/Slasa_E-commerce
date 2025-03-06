@@ -12,6 +12,7 @@ import { useVouchers } from '../../context/VoucherContext'
 import { usePackages } from '../../context/PackageContext'
 import Cult from '../../components/Cult'
 import { CultProvider,cultData } from '../../context/CultContext'
+import Footer from '../../components/Footer'
 
 const WoodShelves = () => {
     const {
@@ -44,7 +45,7 @@ const WoodShelves = () => {
     
     return (
     <>
-    <div className='container mx-auto'>
+    <div >
     <Hero
   image="/Images/wood-easel-canvas.avif" // Directly reference the image path
   title="Art Made Easy"
@@ -100,7 +101,7 @@ const WoodShelves = () => {
         />
       ))}
     
-    
+    <Footer/>
     </div>
     </>
     )
