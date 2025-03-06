@@ -39,7 +39,7 @@ const SpecialityPrinting = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/printing2.avif"
   title="Exquisite"

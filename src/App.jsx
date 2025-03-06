@@ -54,7 +54,75 @@ import Customize from "./Sidebar/Neon/Customize";
 import Celebration from "./Sidebar/Neon/Celebration";
 import Festival from "./Sidebar/Neon/Festival";
 import OfficeEvent from "./Sidebar/Neon/OfficeEvent";
+import DigitalPrinting from "./Sidebar/PrintingPages/DigitalPrinting"
+import OffsetPrinting from "./Sidebar/PrintingPages/OffsetPrinting"
+import SpecialityPrinting from "./Sidebar/PrintingPages/SpecialityPrinting"
+import LargeFormat from "./Sidebar/PrintingPages/LargeFormat"
+import CustomPrinting from "./Sidebar/PrintingPages/CustomPrinting"
+import Corporate from "./Sidebar/PhotoVideoPages/Corporate"
+import Event from "./Sidebar/PhotoVideoPages/Event"
+import Product from "./Sidebar/PhotoVideoPages/Product"
+import Promotional from "./Sidebar/PhotoVideoPages/Promotional"
 
+
+import SpecialVideo from "./Sidebar/PhotoVideoPages/Corporate"
+import EventSetup from "./Sidebar/ExhibitionPages/EventSetup"
+import PhotographyandVideogrpahySetup from "./Sidebar/ExhibitionPages/PhotographyandVideogrpahySetup";
+import Facility from "./Sidebar/MaintanencePages/Facility";
+import HomeMaintenance from "./Sidebar/MaintanencePages/HomeMaintenance";
+import Specialized from "./Sidebar/MaintanencePages/Specialized";
+import Office from "./Sidebar/MaintanencePages/Office";
+import Banner from "./Sidebar/OtherServices/Banner"
+import Exhibition from './Sidebar/OtherServices/Exhibition'
+import Flagstand from "./Sidebar/OtherServices/Flagstand"
+import Flex from "./Sidebar/OtherServices/Flex"
+import LedNeon from "./Sidebar/OtherServices/LedNeon"
+import LightingPoles from "./Sidebar/OtherServices/LightingPoles"
+import Merchanding from "./Sidebar/OtherServices/Merchanding"
+import SafetyEquipements from "./Sidebar/OtherServices/SafetyEquipements";
+import SolarLights from "./Sidebar/OtherServices/SolarLights"
+import StreetSigns from "./Sidebar/OtherServices/StreetSigns"
+import VehicleBranding from "./Sidebar/OtherServices/VehicleBranding"
+import Ceiling from "./Sidebar/NewConstruction/Ceiling"
+import Public from "./Sidebar/NewConstruction/Public"
+import Outdoor from "./Sidebar/NewConstruction/Outdoor"
+import Commercial from "./Sidebar/NewConstruction/Commercial"
+import Luxary from "./Sidebar/HomeRennovationPages/Luxary"
+import SmartHome from "./Sidebar/HomeRennovationPages/SmartHome"
+import SpaceOptimization from "./Sidebar/HomeRennovationPages/SpaceOptimization"
+import Walltreatments from "./Sidebar/HomeRennovationPages/Walltreatments"
+import kitchen from "./Sidebar/InteriorDesign/Kitchen"
+import Bathroom from "./Sidebar/InteriorDesign/Bathroom"
+import Energy from "./Sidebar/InteriorDesign/Energy"
+import Flooring from "./Sidebar/InteriorDesign/Flooring"
+import Kitchen from "./Sidebar/InteriorDesign/Kitchen";
+import RetialStore from "./Sidebar/Commercial/RetialStore"
+
+import Warehouse from "./Sidebar/Commercial/Warehouse"
+import Hospitality from "./Sidebar/Commercial/Hospitality"
+import OfficeInterior from "./Sidebar/Commercial/OfficceInterior"
+
+import Masonry from "./Sidebar/Structure/Masonry"
+import Foundation from "./Sidebar/Structure/Foundation"
+import Demolition from "./Sidebar/Structure/Demolition"
+import Steel from "./Sidebar/Structure/Steel"
+import OurStory from "./FootersPages/OurStory";
+import Cancellation from "./FootersPages/Cancellation";
+import Careers from "./FootersPages/Careers";
+import FAQ from "./FootersPages/FAQ";
+import Payments from "./FootersPages/Payments";
+import PressMedia from "./FootersPages/PressMedia";
+
+import Refunds from "./FootersPages/Refunds";
+import Returns from "./FootersPages/Returns";
+import Security from "./FootersPages/Security";
+import Shipping from "./FootersPages/Shipping";
+import Sitemap from "./FootersPages/Sitemap";
+import StoreLocator from "./FootersPages/StoreLocator";
+import TermsConditions from "./FootersPages/TermsConditions";
+import TrackOrder from "./FootersPages/TrackOrder";
+import ContactUs from "./FootersPages/ContactUs";
+import Privacy from "./FootersPages/privacy";
 
 
 
@@ -483,7 +551,551 @@ const App = () => {
                     </PageLayout>
                   }
                 />
+
+                {/* Routing for the Printing pages  */}
+                <Route
+                  path="/digital-printing"
+                  element={
+                    <PageLayout>
+                      <DigitalPrinting/>
+            
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/offset-printing"
+                  element={
+                    <PageLayout>
+                     <OffsetPrinting/>
+            
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/speciality-prinitng"
+                  element={
+                    <PageLayout>
+                  <SpecialityPrinting/>
+            
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/large-format"
+                  element={
+                    <PageLayout>
+                      <LargeFormat/>
+            
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/custom-printing"
+                  element={
+                    <PageLayout>
+               <CustomPrinting/>
+            
+                    </PageLayout>
+                  }
+                />
+
+                {/* Routing for the photograpy and videogrpahy */}
                 
+                <Route
+                  path="/event"
+                  element={
+                    <PageLayout>
+            <Event/>
+            
+                    </PageLayout>
+                  }
+                />
+
+<Route
+                  path="/product"
+                  element={
+                    <PageLayout>
+                      <Product/>
+            
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/promotional"
+                  element={
+                    <PageLayout>
+            <Promotional/>
+            
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/special-video"
+                  element={
+                    <PageLayout>
+              <SpecialVideo/>
+            
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/corporate"
+                  element={
+                    <PageLayout>
+             <Corporate/>
+            
+                    </PageLayout>
+                  }
+                />
+                {/* Routing for the Exhibition and Events */}
+                <Route
+                  path="/event-setup"
+                  element={
+                    <PageLayout>
+                      <EventSetup/>
+            
+            
+                    </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/services-Photography-&-Videography-Setup"
+                  element={
+                    <PageLayout>
+            <PhotographyandVideogrpahySetup/>
+            
+                    </PageLayout>
+                  }
+                />
+
+                {/* Routing for the Maintanance Services */}
+                <Route
+                  path="/home-maintenance"
+                  element={
+                    <PageLayout>
+                    <HomeMaintenance/>
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/facility"
+                  element={
+                    <PageLayout>
+                      <Facility />
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/office"
+                  element={
+                    <PageLayout>
+                      <Office />
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/specialized"
+                  element={
+                    <PageLayout>
+                      <Specialized />
+                    </PageLayout>
+                  }
+                />
+                {/* Routing for the other services */}
+                <Route
+                  path="/banner"
+                  element={
+                  <PageLayout>
+                    <Banner />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/exhibition"
+                  element={
+                  <PageLayout>
+                    <Exhibition />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/flag-stand"
+                  element={
+                  <PageLayout>
+                    <Flagstand />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/flex"
+                  element={
+                  <PageLayout>
+                    <Flex />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/led-neon"
+                  element={
+                  <PageLayout>
+                    <LedNeon />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/lighting-poles"
+                  element={
+                  <PageLayout>
+                    <LightingPoles />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/merchanding"
+                  element={
+                  <PageLayout>
+                 <Merchanding/>
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/safety-equipments"
+                  element={
+                  <PageLayout>
+                    <SafetyEquipements />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/solar-lights"
+                  element={
+                  <PageLayout>
+                    <SolarLights />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/street-signs"
+                  element={
+                  <PageLayout>
+                    <StreetSigns />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/vehicle-branding"
+                  element={
+                  <PageLayout>
+                    <VehicleBranding />
+                  </PageLayout>
+                  }
+                />
+                {/* Routing for New construction */}
+                {/* Routing for New construction */}
+                <Route
+                  path="/ceiling"
+                  element={
+                  <PageLayout>
+                    <Ceiling />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/commercial"
+                  element={
+                  <PageLayout>
+                    <Commercial />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/landscaping"
+                  element={
+                  <PageLayout>
+                    <Outdoor />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/public"
+                  element={
+                  <PageLayout>
+                    <Public />
+                  </PageLayout>
+                  }
+                />
+
+                {/* Routing added for Rennovation */}
+                <Route
+                  path="/luxury"
+                  element={
+                    <PageLayout>
+                      <Luxary />
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/smart-home"
+                  element={
+                    <PageLayout>
+                      <SmartHome />
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/space-optimization"
+                  element={
+                    <PageLayout>
+                      <SpaceOptimization />
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/wall-treatments"
+                  element={
+                    <PageLayout>
+              <Walltreatments/>
+                    </PageLayout>
+                  }
+                />
+                {/* Routing for the InteriorDesigns */}
+                {/* Routing for the Interior Designs */}
+                <Route
+                  path="/bathroom"
+                  element={
+                  <PageLayout>
+                    <Bathroom />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/energy"
+                  element={
+                  <PageLayout>
+                    <Energy />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/flooring"
+                  element={
+                  <PageLayout>
+                    <Flooring />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/kitchen"
+                  element={
+                  <PageLayout>
+                   <Kitchen/>
+                  </PageLayout>
+                  }
+                />
+                {/* Routing for Commercial space */}
+                <Route
+                  path="/retail-store"
+                  element={
+                    <PageLayout>
+                      <RetialStore />
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/warehouse"
+                  element={
+                    <PageLayout>
+                      <Warehouse />
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/office-interior"
+                  element={
+                    <PageLayout>
+                      <OfficeInterior />
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/hospitality"
+                  element={
+                    <PageLayout>
+                      <Hospitality />
+                    </PageLayout>
+                  }
+                />
+
+                {/* Routing for Structure */}
+               
+                <Route
+                  path="/demolition"
+                  element={
+                  <PageLayout>
+                    <Demolition />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/foundation"
+                  element={
+                  <PageLayout>
+                    <Foundation />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/masonry"
+                  element={
+                  <PageLayout>
+                    <Masonry />
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/steel"
+                  element={
+                  <PageLayout>
+                    <Steel />
+                  </PageLayout>
+                  }
+                />
+                {/* Routing for the Footer */}
+
+                <Route
+                  path="/Ourstory"
+                  element={
+                  <PageLayout>
+              <OurStory/>
+                  </PageLayout>
+                  }
+                />
+
+<Route
+                  path="/cancellation"
+                  element={
+                  <PageLayout>
+                  <Cancellation/>
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/careers"
+                  element={
+                    <PageLayout>
+                    <Careers/>
+                    </PageLayout>
+                  }
+                />
+                <Route
+                  path="/faq"
+                  element={
+                  <PageLayout>
+                 <FAQ/>
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/payments"
+                  element={
+                  <PageLayout>
+                  <Payments/>
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/press-media"
+                  element={
+                  <PageLayout>
+                <PressMedia/>
+                  </PageLayout>
+                  }
+                />
+                 <Route
+                  path="/privacy"
+                  element={
+                  <PageLayout>
+           <Privacy/>
+                  </PageLayout>
+                  }
+                />
+               
+                <Route
+                  path="/refunds"
+                  element={
+                  <PageLayout>
+               <Refunds/>
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/returns"
+                  element={
+                  <PageLayout>
+               <Returns/>
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="security"
+                  element={
+                  <PageLayout>
+                <Security/>
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/shipping"
+                  element={
+                  <PageLayout>
+              <Shipping/>
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/sitemap"
+                  element={
+                  <PageLayout>
+                <Sitemap/>
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/store-locator"
+                  element={
+                  <PageLayout>
+              <StoreLocator/>
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/terms"
+                  element={
+                  <PageLayout>
+                 <TermsConditions/>
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/track"
+                  element={
+                  <PageLayout>
+                <TrackOrder/>
+                  </PageLayout>
+                  }
+                />
+                <Route
+                  path="/contactus"
+                  element={
+                  <PageLayout>
+                <ContactUs/>
+                  </PageLayout>
+                  }
+                />
+                
+                
+
+
 
 
                

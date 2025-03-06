@@ -39,7 +39,7 @@ const OffsetPrinting = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/printing1.avif"
   title="Precision in"

@@ -41,7 +41,7 @@ const RetialStore = () => {
             
   return (
     <>
-     <div className='container mx-auto'>
+     <div >
      <Hero
   image="/Images/Retail.avif"
   title="Revamp Your"

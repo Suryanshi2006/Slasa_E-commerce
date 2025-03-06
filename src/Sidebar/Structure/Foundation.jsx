@@ -39,7 +39,7 @@ const Foundation = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Foundation.avif"
   title="Solid & Reliable"

@@ -39,7 +39,7 @@ const SpecialVideo = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Photo4.avif"
   title="Unique"

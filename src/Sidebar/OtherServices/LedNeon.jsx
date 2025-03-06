@@ -39,7 +39,7 @@ const LedNeon = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/HeroLEDNeonSignage.avif"
   title="Vibrant"

@@ -39,7 +39,7 @@ const Product = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Exclusive28.jpeg"
   title="Showcasing"

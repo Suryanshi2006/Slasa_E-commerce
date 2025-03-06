@@ -39,7 +39,7 @@ const FloorDesigning = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
 image="/Images/HeroAcrylic.avif" // Directly reference the image path
 title="Crafting"

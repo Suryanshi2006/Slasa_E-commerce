@@ -46,10 +46,10 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold text-lg mb-5">Customer Service</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-gray-900">Contact Us</a></li>
-            <li><a href="#" className="hover:text-gray-900">Track Order</a></li>
-            <li><a href="#" className="hover:text-gray-900">Returns & Refunds</a></li>
-            <li><a href="#" className="hover:text-gray-900">FAQs</a></li>
+            <li><a href="/contactus" className="hover:text-gray-900">Contact Us</a></li>
+            <li><a href="/track" className="hover:text-gray-900">Track Order</a></li>
+            <li><a href="/returns" className="hover:text-gray-900">Returns & Refunds</a></li>
+            <li><a href="/faq" className="hover:text-gray-900">FAQs</a></li>
           </ul>
         </div>
 
@@ -57,10 +57,10 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold text-lg mb-5">About Us</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-gray-900">Our Story</a></li>
-            <li><a href="#" className="hover:text-gray-900">Careers</a></li>
-            <li><a href="#" className="hover:text-gray-900">Store Locator</a></li>
-            <li><a href="#" className="hover:text-gray-900">Press & Media</a></li>
+            <li><a href="/OurStory" className="hover:text-gray-900">Our Story</a></li>
+            <li><a href="/careers" className="hover:text-gray-900">Careers</a></li>
+            <li><a href="/store-locator" className="hover:text-gray-900">Store Locator</a></li>
+            <li><a href="press-media" className="hover:text-gray-900">Press & Media</a></li>
           </ul>
         </div>
 
@@ -68,39 +68,39 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold text-lg mb-3">More Information</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-gray-900">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-gray-900">Terms & Conditions</a></li>
-            <li><a href="#" className="hover:text-gray-900">Shipping Policy</a></li>
-            <li><a href="#" className="hover:text-gray-900">Sitemap</a></li>
+            <li><a href="/privacy" className="hover:text-gray-900">Privacy Policy</a></li>
+            <li><a href="/terms" className="hover:text-gray-900">Terms & Conditions</a></li>
+            <li><a href="/shipping" className="hover:text-gray-900">Shipping Policy</a></li>
+            <li><a href="/sitemap" className="hover:text-gray-900">Sitemap</a></li>
           </ul>
         </div>
         <div>
           <h4 className="font-semibold text-lg mb-5">Services</h4>
           <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-gray-900">Construction</a></li>
-            <li><a href="#" className="hover:text-gray-900">Printing Services</a></li>
-            <li><a href="#" className="hover:text-gray-900">Photgraphy and Videogrpahy</a></li>
-            <li><a href="#" className="hover:text-gray-900">Rennovation</a></li>
-            <li><a href="#" className="hover:text-gray-900">Construction</a></li>
+              <li><a href="/construction" className="hover:text-gray-900">Construction</a></li>
+            <li><a href="/printing" className="hover:text-gray-900">Printing Services</a></li>
+            <li><a href="/photography" className="hover:text-gray-900">Photgraphy and Videogrpahy</a></li>
+            <li><a href="/rennovation" className="hover:text-gray-900">Rennovation</a></li>
+            <li><a href="/construction" className="hover:text-gray-900">Construction</a></li>
           </ul>
         </div>
         <div>
           <h4 className="font-semibold text-lg mb-5">Consumer Policy</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-gray-900">Cancellation & Returns</a></li>
-            <li><a href="#" className="hover:text-gray-900">Terms & Conditions</a></li>
-            <li><a href="#" className="hover:text-gray-900">Security</a></li>
-            <li><a href="#" className="hover:text-gray-900">privacy</a></li>
-            <li><a href="#" className="hover:text-gray-900">Sitemap</a></li>
+            <li><a href="/cancellation" className="hover:text-gray-900">Cancellation & Returns</a></li>
+            <li><a href="/terms" className="hover:text-gray-900">Terms & Conditions</a></li>
+            <li><a href="/security" className="hover:text-gray-900">Security</a></li>
+            <li><a href="/privacy" className="hover:text-gray-900">privacy</a></li>
+            <li><a href="/sitemap" className="hover:text-gray-900">Sitemap</a></li>
           </ul>
         </div>
         <div>
           <h4 className="font-semibold text-lg mb-5">Help</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-gray-900">Payments</a></li>
-            <li><a href="#" className="hover:text-gray-900">Shipping</a></li>
-            <li><a href="#" className="hover:text-gray-900">FAQ</a></li>
-            <li><a href="#" className="hover:text-gray-900">Cancellation and Returns</a></li>
+            <li><a href="/payments" className="hover:text-gray-900">Payments</a></li>
+            <li><a href="/shipping" className="hover:text-gray-900">Shipping</a></li>
+            <li><a href="/faq" className="hover:text-gray-900">FAQ</a></li>
+            <li><a href="/cancellation" className="hover:text-gray-900">Cancellation and Returns</a></li>
           </ul>
         </div>
         

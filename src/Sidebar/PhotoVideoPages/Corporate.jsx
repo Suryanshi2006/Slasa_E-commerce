@@ -39,7 +39,7 @@ const Corporate = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Corporate1.avif"
   title="Refining"

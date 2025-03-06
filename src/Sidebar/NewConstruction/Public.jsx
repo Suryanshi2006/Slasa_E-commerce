@@ -39,7 +39,7 @@ const Public = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Building.webp"
   title="Architectural Excellence in"

@@ -39,7 +39,7 @@ const Outdoor = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div>
 <Hero
   image="/Images/Outdoor.avif"
   title="Enhancing"

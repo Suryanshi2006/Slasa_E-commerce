@@ -39,7 +39,7 @@ const Flex = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/HeroFlexFaceSignange.jpg"
   title="Durable"

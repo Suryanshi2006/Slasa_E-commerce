@@ -39,7 +39,7 @@ const Luxary = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Bedroom.jpeg"
   title="Transforming Spaces with"
