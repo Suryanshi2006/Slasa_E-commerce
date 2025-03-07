@@ -122,7 +122,7 @@ import StoreLocator from "./FootersPages/StoreLocator";
 import TermsConditions from "./FootersPages/TermsConditions";
 import TrackOrder from "./FootersPages/TrackOrder";
 import ContactUs from "./FootersPages/ContactUs";
-import Privacy from "./FootersPages/privacy";
+
 import About from "./FootersPages/About";
 
 
@@ -1012,14 +1012,7 @@ const App = () => {
                   </PageLayout>
                   }
                 />
-                 <Route
-                  path="/privacy"
-                  element={
-                  <PageLayout>
-           <Privacy/>
-                  </PageLayout>
-                  }
-                />
+                
                  <Route
                   path="/about"
                   element={
