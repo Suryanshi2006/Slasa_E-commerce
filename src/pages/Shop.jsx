@@ -43,14 +43,19 @@ const Shop = () => {
       return (
         <>
           <div >
-            <Hero
-              image="/Images/TopRated3.avif"
-              title="Exclusive Acrylic Decor"
-              highlight=" Luxury Meets Art"
-              subtitle="Elevate Your Space with Acrylic Elegance"
-              buttonText="Explore"
-              buttonLink="/explore"
-            />
+          <Hero
+  slides={[
+    "/Images/Sale1.jpeg",
+    "/Images/AcrylicWood.jpeg",
+    "/Images/AcrylicWall.jpeg",
+    "/Images/HeroWood.png",
+    "/Images/Premium.jpeg",
+  
+  ]}
+  buttonText="Explore"
+  buttonLink="/explore"
+ 
+/>
     
             <ProductSection title={title} description={description} className="mt-20" />
     

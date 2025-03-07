@@ -42,14 +42,19 @@ const Photography = () => {
 
   return (
     <div className="">
-      <Hero
-        image="/Images/HeroPhoto.jpeg" // Directly reference the image path
-        title="Bringing"
-        highlight="Moments to Life"
-        subtitle="Through the Art of Photography and Videography"
-        buttonText="Explore"
-        buttonLink="/explore"
-      />
+       <Hero
+  slides={[
+    "/Images/Sale1.jpeg",
+    "/Images/AcrylicWood.jpeg",
+    "/Images/AcrylicWall.jpeg",
+    "/Images/HeroWood.png",
+    "/Images/Premium.jpeg"
+  
+  ]}
+   buttonText="Explore"
+  buttonLink="/explore"
+ 
+/>
 
       <ProductSection title={title} description={description} />
 

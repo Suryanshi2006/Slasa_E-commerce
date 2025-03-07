@@ -42,14 +42,19 @@ const Construction = () => {
 
   return (
     <div className="">
-      <Hero
-        image="/Images/HeroConstruction.jpeg" // Directly reference the image path
-        title="Building"
-        highlight="Your Dreams"
-        subtitle="One Brick at a Time"
-        buttonText="Explore"
-        buttonLink="/explore"
-      />
+       <Hero
+  slides={[
+    "/Images/Sale1.jpeg",
+    "/Images/AcrylicWood.jpeg",
+    "/Images/AcrylicWall.jpeg",
+    "/Images/HeroWood.png",
+    "/Images/Premium.jpeg"
+  
+  ]}
+   buttonText="Explore"
+  buttonLink="/explore"
+ 
+/>
 
       <ProductSection title={title} description={description} />
 

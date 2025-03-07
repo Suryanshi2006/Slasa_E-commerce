@@ -42,14 +42,19 @@ const Renovation = () => {
 
   return (
     <div className="">
-      <Hero
-        image="/Images/HeroRenoovation.jpeg" // Directly reference the image path
-        title="Transforming"
-        highlight="Your Space"
-        subtitle="One Renovation at a Time"
-        buttonText="Explore"
-        buttonLink="/explore"
-      />
+        <Hero
+  slides={[
+    "/Images/Sale1.jpeg",
+    "/Images/AcrylicWood.jpeg",
+    "/Images/AcrylicWall.jpeg",
+    "/Images/HeroWood.png",
+    "/Images/Premium.jpeg",
+  
+  ]}
+  buttonText="Explore"
+  buttonLink="/explore"
+ 
+/>
       <ProductSection title={title} description={description} />
       <div className="flex justify-center gap-4 flex-wrap p-4">
         <ProductCard />

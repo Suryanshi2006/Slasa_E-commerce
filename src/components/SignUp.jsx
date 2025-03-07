@@ -64,9 +64,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#3087d1]">
+    <div className="flex min-h-screen items-center justify-center ">
       <div className="bg-white p-10 rounded-3xl shadow-xl w-96 transform transition-all hover:scale-105">
-        <h2 className="text-3xl font-extrabold text-center text-[#4c6ef5] mb-8">Sign Up</h2>
+        <h2 className="text-3xl font-extrabold text-center text-[#3087d1] mb-8">Sign Up</h2>
 
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
@@ -126,7 +126,7 @@ const SignUp = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-[#3087d1] text-white py-3 rounded-xl hover:bg-[#4c6ef5] transition-all duration-300 transform active:scale-95"
+            className="w-full !bg-[#3087d1] text-white py-3 rounded-xl hover:bg-[#4c6ef5] transition-all duration-300 transform active:scale-95"
             disabled={loading}
           >
             {loading ? "Signing Up..." : "Sign Up"}

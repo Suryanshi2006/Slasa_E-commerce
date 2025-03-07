@@ -42,14 +42,19 @@ const NewArrivals = () => {
   return (
     <>
       <div className="">
-        <Hero
-          image="/Images/sales.jpg" // Directly reference the image path
-          title="Today's Deals"
-          highlight="Your Dreams"
-          subtitle="Limited Time Offers!"
-          buttonText="Explore"
-          buttonLink="/explore"
-        />
+      <Hero
+  slides={[
+    "/Images/Sale1.jpeg",
+    "/Images/AcrylicWood.jpeg",
+    "/Images/AcrylicWall.jpeg",
+    "/Images/HeroWood.png",
+    "/Images/Premium.jpeg"
+  
+  ]}
+   buttonText="Explore"
+  buttonLink="/explore"
+ 
+/>
 
         <ProductSection title={title} description={description} />
 

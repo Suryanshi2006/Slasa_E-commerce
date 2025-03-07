@@ -43,7 +43,7 @@ return (
 <>
 <div >
 <Hero
-  image="/Images/AcrylicWood.avif" // Directly reference the image path
+  image="/Images/HeroWood.png" // Directly reference the image path
   title="Strength Meets Elegance"
   highlight="Acrylic Wood"
   subtitle="Premium Wood Finish with Acrylic Durability"
