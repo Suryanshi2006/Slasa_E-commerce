@@ -39,10 +39,9 @@ const Demolition = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
-  image="/Images/Demolition
-  .avif"
+  image="/Images/Demolition.avif"
   title="Efficient & Safe"
   highlight="Demolition & Site Preparation"
   subtitle="Clearing the Way for New Developments"

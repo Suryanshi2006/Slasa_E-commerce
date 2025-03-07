@@ -12,6 +12,7 @@ import { useVouchers } from '../../context/VoucherContext'
 import { usePackages } from '../../context/PackageContext'
 import Cult from '../../components/Cult'
 import { CultProvider,cultData } from '../../context/CultContext'
+import Footer from '../../components/Footer'
 
 const Backinstock = () => {
   const {
@@ -94,7 +95,7 @@ buttonLink={voucher.buttonLink}
 />
 ))}
 
-
+<Footer/>
 </div>
 </>
 )

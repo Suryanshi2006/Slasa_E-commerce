@@ -39,7 +39,7 @@ const Ceiling = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div>
 <Hero
   image="/Images/ceiling.avif"
   title="Elegant"

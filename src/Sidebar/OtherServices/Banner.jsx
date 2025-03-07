@@ -39,7 +39,7 @@ const Banner = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/HeroBanner.avif"
   title="Eye-Catching"

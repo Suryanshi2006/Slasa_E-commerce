@@ -39,7 +39,7 @@ const Commercial = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div>
 <Hero
   image="/Images/construction1.avif"
   title="Reliable"

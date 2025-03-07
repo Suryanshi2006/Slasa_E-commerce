@@ -39,7 +39,7 @@ const Warehouse = () => {
               
   return (
   <>
-   <div className='container mx-auto'>
+   <div >
    <Hero
   image="/Images/Warehouse.avif"
   title="Optimizing"

@@ -39,7 +39,7 @@ const Office = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
 image="/Images/HeroAcrylic.avif" // Directly reference the image path
 title="Crafting"
@@ -93,7 +93,7 @@ buttonLink={voucher.buttonLink}
 />
 ))}
 
-
+<Footer/>
 </div>
 </>
 )

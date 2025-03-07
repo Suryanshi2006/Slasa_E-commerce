@@ -15,6 +15,7 @@ import Hero from "../components/Hero.jsx";
 import { useVouchers } from "../context/VoucherContext";
 import { usePackages } from "../context/PackageContext"; // Corrected import
 import { CultProvider, cultData } from "../context/CultContext"; 
+import Footer from "../components/Footer.jsx";
 
 
 const Home = () => {
@@ -105,6 +106,7 @@ const Home = () => {
           buttonLink={voucher.buttonLink}
         />
       ))}
+      <Footer/>
 
       <Outlet />
     </div>

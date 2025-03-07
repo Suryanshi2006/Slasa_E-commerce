@@ -39,7 +39,7 @@ const OfficceInterior = () => {
             
   return (
     <>
-     <div className='container mx-auto'>
+     <div >
      <Hero
   image="/Images/Office.avif"
   title="Enhancing"

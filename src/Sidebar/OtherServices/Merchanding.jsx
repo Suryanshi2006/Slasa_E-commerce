@@ -39,7 +39,7 @@ const Merchanding = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div>
 <Hero
   image="/Images/Merchanding.webp"
   title="Smart"

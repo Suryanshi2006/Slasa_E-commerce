@@ -12,6 +12,7 @@ import { useVouchers } from '../../context/VoucherContext'
 import { usePackages } from '../../context/PackageContext'
 import Cult from '../../components/Cult'
 import { CultProvider,cultData } from '../../context/CultContext'
+import Footer from '../../components/Footer'
 
 const CustomeFrames = () => {
   const {
@@ -39,7 +40,7 @@ const CustomeFrames = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Custom.avif" // Directly reference the image path
   title="Personalized Elegance"
@@ -94,7 +95,7 @@ buttonLink={voucher.buttonLink}
 />
 ))}
 
-
+<Footer/>
 </div>
 </>
 )

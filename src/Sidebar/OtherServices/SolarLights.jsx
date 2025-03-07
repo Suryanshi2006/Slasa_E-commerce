@@ -38,7 +38,7 @@ const SolarLights = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/SolarLight.avif"
   title="Eco-Friendly"

@@ -39,7 +39,7 @@ const Hospitality = () => {
       
   return (
    <>
-    <div className='container mx-auto'>
+    <div >
     <Hero
   image="/Images/Hospitality.webp"
   title="Elevating"

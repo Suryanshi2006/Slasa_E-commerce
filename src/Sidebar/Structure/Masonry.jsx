@@ -39,7 +39,7 @@ const Masonry = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Masonry.avif"
   title="Expert"

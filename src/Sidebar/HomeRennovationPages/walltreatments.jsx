@@ -13,7 +13,7 @@ import { usePackages } from '../../context/PackageContext'
 import Cult from '../../components/Cult'
 import { CultProvider,cultData } from '../../context/CultContext'
 
-const walltreatments = () => {
+const Walltreatments = () => {
   const {
     voucherData,
     constructionVoucher,
@@ -39,7 +39,7 @@ const walltreatments = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Exclusive.jpeg"
   title="Elegant"
@@ -99,4 +99,4 @@ buttonLink={voucher.buttonLink}
 )
 }
 
-export default walltreatments
+export default Walltreatments

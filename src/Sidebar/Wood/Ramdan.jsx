@@ -12,6 +12,7 @@ import { useVouchers } from '../../context/VoucherContext'
 import { usePackages } from '../../context/PackageContext'
 import Cult from '../../components/Cult'
 import { CultProvider,cultData } from '../../context/CultContext'
+import Footer from '../../components/Footer'
 
 const Ramdan = () => {
     const {
@@ -45,7 +46,7 @@ const Ramdan = () => {
     
     return (
     <>
-    <div className='container mx-auto'>
+    <div >
     <Hero
   image="/Images/Exclusive10.jpeg" // Directly reference the image path
   title="Celebrate the Spirit"
@@ -102,7 +103,7 @@ const Ramdan = () => {
         />
       ))}
     
-    
+    <Footer/>
     </div>
     </>
     )

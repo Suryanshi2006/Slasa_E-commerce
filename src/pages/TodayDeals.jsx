@@ -12,6 +12,7 @@ import Voucher from '../components/Voucher'
 import { useVouchers } from "../context/VoucherContext";
 import { usePackages } from "../context/PackageContext";
 import { CultProvider, cultData } from "../context/CultContext"; 
+import Footer from '../components/Footer'
 
 
 const TodayDeals = () => {
@@ -91,6 +92,7 @@ const TodayDeals = () => {
             buttonLink={voucher.buttonLink}
           />
         ))}
+        <Footer/>
       </div>
     </>
   );

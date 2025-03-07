@@ -4,6 +4,23 @@
 @import '@fontsource/roboto/500.css';
 @import '@fontsource/roboto/700.css';
 
+
+@font-face {
+  font-family: 'Lengthwise';
+  src: url('/fonts/lengthwise.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lengthwise', sans-serif;
+}
+
+
+
+
 :root {
   font-family: Palatino, serif;
   line-height: 1.5;

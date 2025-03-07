@@ -38,7 +38,7 @@ const title = "Top Rated Products";
 const description = "Discover our best-selling and highly rated products, loved by customers for their quality, durability, and style. Shop now for the most popular picks!";
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/metal.avif"
   title="High-Quality"

@@ -39,7 +39,7 @@ const Kitchen = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Kitchen.jpeg"
   title="Modern & Functional"

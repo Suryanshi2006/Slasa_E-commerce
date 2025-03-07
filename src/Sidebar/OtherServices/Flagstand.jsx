@@ -39,7 +39,7 @@ const Flagstand = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/HeroFlagStand.avif"
   title="Stable"

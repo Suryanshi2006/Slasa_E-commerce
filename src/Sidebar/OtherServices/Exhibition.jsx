@@ -42,7 +42,7 @@ const Exhibition = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/HeroExhibitionStand.avif"
   title="Professional"

@@ -39,7 +39,7 @@ const Promotional = () => {
   
 return (
 <>
-<div className='container mx-auto'>
+<div >
 <Hero
   image="/Images/Exclusive27.jpeg"
   title="Engage &"
