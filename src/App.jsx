@@ -123,6 +123,7 @@ import TermsConditions from "./FootersPages/TermsConditions";
 import TrackOrder from "./FootersPages/TrackOrder";
 import ContactUs from "./FootersPages/ContactUs";
 import Privacy from "./FootersPages/privacy";
+import About from "./FootersPages/About";
 
 
 
@@ -1019,6 +1020,16 @@ const App = () => {
                   </PageLayout>
                   }
                 />
+                 <Route
+                  path="/about"
+                  element={
+                  <PageLayout>
+                    <About/>
+          
+                  </PageLayout>
+                  }
+                />
+
                
                 <Route
                   path="/refunds"

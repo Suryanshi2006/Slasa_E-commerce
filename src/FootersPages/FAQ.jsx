@@ -1,27 +1,22 @@
 import React from "react";
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { motion } from "framer-motion";
+import HelpSection from "./HelpSection";
+import HelpGrid from "./HelpGrid";
 
-const faqs = [
-  {
-    question: "What is your return policy?",
-    answer: "You can return any item within 30 days of purchase as long as it is in its original condition.",
-  },
-  {
-    question: "How long does shipping take?",
-    answer: "Standard shipping takes 5-7 business days, while express shipping takes 2-3 business days.",
-  },
-  {
-    question: "Do you offer international shipping?",
-    answer: "Yes, we offer international shipping to select countries. Additional charges may apply.",
-  },
-  {
-    question: "How can I track my order?",
-    answer: "Once your order is shipped, you will receive a tracking number via email.",
-  },
-];
+const FAQ = () => {
+  const faqs = [
+    { question: "What if I'm not at home when my order arrives?", answer: "Our delivery partner will contact you for rescheduling." },
+    { question: "When will I receive my order?", answer: "You can track your order in the 'My Orders' section." },
+    { question: "What is your policy on returns?", answer: "You can return products within 30 days if they meet our return criteria." },
+    { question: "How do I change my email address?", answer: "Go to 'My Account' > 'Edit Profile' to update your email." },
+    { question: "How do I return my products?", answer: "Initiate a return through 'My Orders' and follow the steps provided." },
+    { question: "Can I exchange my purchase for another product?", answer: "Yes, exchanges are possible if the item is eligible." },
+    { question: "How do I cancel an order?", answer: "Go to 'My Orders' and select 'Cancel' before it's shipped." },
+    { question: "I just returned my products. When will I receive my refund?", answer: "Refunds are processed within 5-7 business days." },
+    { question: "If I have used a promo code, how is my refund calculated?", answer: "Refunds are calculated based on the final amount paid after discounts." }
+  ];
 
-export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -29,26 +24,37 @@ export default function FAQ() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-      <div className="space-y-4">
+    <>
+    <HelpSection/>
+    <HelpGrid/>
+    <div className="px-6 py-12 max-w-4xl mx-auto">
+      <h2 className="text-2xl font-semibold mb-6">Most popular questions</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {faqs.map((faq, index) => (
-          <div key={index} className="border rounded-lg shadow-sm">
+          <div key={index} className="border-b pb-4">
             <button
-              className="flex justify-between items-center w-full p-4 text-left bg-gray-100 hover:bg-gray-200"
+              className="w-full text-left font-medium text-gray-700 flex justify-between items-center py-2"
               onClick={() => toggleFAQ(index)}
             >
-              <span className="font-medium">{faq.question}</span>
-              {openIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+              {faq.question}
+              <span className="text-xl">{openIndex === index ? "−" : "+"}</span>
             </button>
             {openIndex === index && (
-              <div className="p-4 border-t bg-white">
-                <p>{faq.answer}</p>
-              </div>
+              <motion.p
+                className="text-gray-600 mt-2"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                transition={{ duration: 0.3 }}
+              >
+                {faq.answer}
+              </motion.p>
             )}
           </div>
         ))}
       </div>
     </div>
+    </>
   );
-}
+};
+
+export default FAQ;

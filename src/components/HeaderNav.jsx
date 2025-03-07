@@ -48,7 +48,7 @@ const HeaderNav = () => {
       <div className="flex items-center justify-between max-w-[1400px] mx-auto flex-wrap">
         {/* Logo */}
         <div className="flex items-center bg-gray-900 px-4 py-2  rounded-md shadow-md cursor-pointer">
-          <img src="/Images/logo.jpeg" alt="Logo" className="!h-20 w-35 object-contain bg-transparent rounded-tr-lg " />
+          <img src="/Images/SLASA.svg" alt="Logo" className="!h-20 w-35 object-contain bg-transparent rounded-tr-lg " />
    
         </div>
 

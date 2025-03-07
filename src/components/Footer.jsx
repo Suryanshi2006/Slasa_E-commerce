@@ -58,6 +58,7 @@ const Footer = () => {
           <h4 className="font-semibold text-lg mb-5">About Us</h4>
           <ul className="space-y-2 text-sm">
             <li><a href="/OurStory" className="hover:text-gray-900">Our Story</a></li>
+            <li><a href="/about" className="hover:text-gray-900">About</a></li>
             <li><a href="/careers" className="hover:text-gray-900">Careers</a></li>
             <li><a href="/store-locator" className="hover:text-gray-900">Store Locator</a></li>
             <li><a href="press-media" className="hover:text-gray-900">Press & Media</a></li>
