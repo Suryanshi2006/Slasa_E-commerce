@@ -90,7 +90,7 @@ import Commercial from "./Sidebar/NewConstruction/Commercial"
 import Luxary from "./Sidebar/HomeRennovationPages/Luxary"
 import SmartHome from "./Sidebar/HomeRennovationPages/SmartHome"
 import SpaceOptimization from "./Sidebar/HomeRennovationPages/SpaceOptimization"
-import Walltreatments from "./Sidebar/HomeRennovationPages/Walltreatments"
+// import Walltreatments from "./Sidebar/HomeRennovationPages/Walltreatments"
 // import kitchen from "./Sidebar/InteriorDesign/Kitchen"
 import Bathroom from "./Sidebar/InteriorDesign/Bathroom"
 import Energy from "./Sidebar/InteriorDesign/Energy"
@@ -851,14 +851,14 @@ const App = () => {
                     </PageLayout>
                   }
                 />
-                <Route
+                {/* <Route
                   path="/wall-treatments"
                   element={
                     <PageLayout>
               <Walltreatments/>
                     </PageLayout>
                   }
-                />
+                /> */}
                 {/* Routing for the InteriorDesigns */}
                 {/* Routing for the Interior Designs */}
                 <Route
