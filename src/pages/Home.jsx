@@ -52,16 +52,21 @@ const Home = () => {
 
       <div className=" min-h-screen overflow-hidden bg-white">
 
-        <Hero
-          image="/Images/Bathroom.avif" // Directly reference the image path
-          title="Discover"
-          highlight="Slasa's World"
-          subtitle="Where Innovation Meets Quality"
-          buttonText="Explore"
-          buttonLink="/explore"
-        />
+      <Hero
+  slides={[
+    "/Images/Sale1.jpeg",
+    "/Images/AcrylicWood.jpeg",
+    "/Images/AcrylicWall.jpeg",
+    "/Images/HeroWood.png",
+    "/Images/Premium.jpeg"
+  
+  ]}
+   buttonText="Explore"
+  buttonLink="/explore"
+ 
+/>
 
-        <ProductSection title={title} description={description} mt-20 />
+        <ProductSection title={title} description={description} mt-10 />
       </div>
 
       <div className="flex justify-center gap-4 flex-wrap p-4 mt-[-70px]">

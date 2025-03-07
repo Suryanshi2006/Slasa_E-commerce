@@ -42,7 +42,7 @@ const HeroSection = () => {
       {/* Second Section */}
       <div className="flex items-center justify-center gap-4 mt-10">
         <h1 className="text-3xl font-bold text-[#3087d1] px-4 flex-shrink-0">
-          {heroData?.section2Title || "Bed, Bathroom, and Kitchen"}
+          {heroData?.section2Title || "The Rennovation Presents"}
         </h1>
         <span className="w-150 h-1 bg-[#3087d1]"></span>
       </div>

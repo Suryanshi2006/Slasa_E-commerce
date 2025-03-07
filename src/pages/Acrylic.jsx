@@ -43,14 +43,21 @@ const Acrylic = () => {
   return (
     <>
       <div >
-        <Hero
-          image="/Images/Exclusive11.jpeg"
-          title="Crafting"
-          highlight="Elegance in Acrylic"
-          subtitle="Transform Your Space with Precision"
-          buttonText="Explore"
-          buttonLink="/explore"
-        />
+      <Hero
+  slides={[
+    "/Images/HeroWood.png",
+    "/Images/Sale1.jpeg",
+    "/Images/AcrylicWall.jpeg",
+    "/Images/AcrylicWood.jpeg",
+ 
+  
+    "/Images/Premium.jpeg",
+  
+  ]}
+  buttonText="Explore"
+  buttonLink="/explore"
+ 
+/>
 
         <ProductSection title={title} description={description} className="mt-20" />
 

@@ -45,7 +45,7 @@ const SignIn = () => {
 
   return (
     <div className={`main-content ${isAuthPage ? "auth-page" : ""}`}>
-    <div className="flex min-h-screen w-full justify-start items-center bg-[#3087d1] px-4">
+ <div className="flex h-screen w-full items-center justify-center  px-4">
   <div className="bg-white p-10 rounded-3xl shadow-xl w-full max-w-lg">
     <h2 className="text-3xl font-extrabold text-center text-[#3087d1] mb-8">Sign In</h2>
 
@@ -76,7 +76,7 @@ const SignIn = () => {
 
       <button 
         type="submit" 
-        className="w-full bg-[#3087d1] text-white py-3 rounded-xl hover:bg-[#4c6ef5] transition-all duration-300 transform active:scale-95"
+        className="w-full !bg-[#3087d1] text-white py-3 rounded-xl hover:bg-[#4c6ef5] transition-all duration-300 transform active:scale-95"
         disabled={loading}
       >
         {loading ? "Signing In..." : "Sign In"}
@@ -84,6 +84,7 @@ const SignIn = () => {
     </form>
   </div>
 </div>
+
 
     </div>
   );

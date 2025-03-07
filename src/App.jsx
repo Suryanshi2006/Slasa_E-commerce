@@ -124,6 +124,7 @@ import TrackOrder from "./FootersPages/TrackOrder";
 import ContactUs from "./FootersPages/ContactUs";
 
 import About from "./FootersPages/About";
+import SearchResults from "./components/SearchResults";
 
 
 
@@ -869,6 +870,8 @@ const App = () => {
                   </PageLayout>
                   }
                 />
+                <Route path="/search" element={<SearchResults />} />
+
                 <Route
                   path="/energy"
                   element={
