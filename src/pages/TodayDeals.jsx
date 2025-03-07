@@ -37,11 +37,13 @@ const TodayDeals = () => {
       <div className='px-4'>
       <Hero
   slides={[
+    "/Images/AcrylicWall.jpeg",
     "/Images/Sale1.jpeg",
     "/Images/AcrylicWood.jpeg",
     "/Images/AcrylicWall.jpeg",
     "/Images/HeroWood.png",
     "/Images/Premium.jpeg",
+   
   
   ]}
   buttonText="Explore"

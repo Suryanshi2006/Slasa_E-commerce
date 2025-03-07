@@ -44,6 +44,7 @@ const Construction = () => {
     <div className="">
        <Hero
   slides={[
+    "/Images/Bedroom.jpeg",
     "/Images/Sale1.jpeg",
     "/Images/AcrylicWood.jpeg",
     "/Images/AcrylicWall.jpeg",
