@@ -19,6 +19,7 @@
     "@tailwindcss/vite": "^4.0.8",
     "and": "^0.0.3",
     "axios": "^1.7.9",
+    "b": "^2.0.1",
     "chart.js": "^4.4.8",
     "frame": "^1.0.0-alpha.2",
     "framer-motion": "^12.4.7",

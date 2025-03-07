@@ -44,7 +44,8 @@ const NewArrivals = () => {
       <div className="">
       <Hero
   slides={[
-    "/Images/Sale1.jpeg",
+       "/Images/Art.jpeg",
+    "/Images/Mega.jpeg",
     "/Images/AcrylicWood.jpeg",
     "/Images/AcrylicWall.jpeg",
     "/Images/HeroWood.png",

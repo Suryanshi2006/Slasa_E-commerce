@@ -43,6 +43,7 @@ const Printing = () => {
     <div className="">
         <Hero
   slides={[
+    "/Images/HeroPrint.jpeg",
     "/Images/Sale1.jpeg",
     "/Images/AcrylicWood.jpeg",
     "/Images/AcrylicWall.jpeg",
