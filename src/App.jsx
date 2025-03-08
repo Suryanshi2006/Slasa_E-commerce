@@ -968,7 +968,7 @@ const App = () => {
                 {/* Routing for the Footer */}
 
                 <Route
-                  path="/Ourstory"
+                  path="/OurStory"
                   element={
                   <PageLayout>
               <OurStory/>
