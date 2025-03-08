@@ -88,6 +88,7 @@ const HeroSection = () => {
 
       {/* Product List (Unchanged) */}
       <ProductList />
+      
 
       {/* Hero Image 2 */}
       <div className="relative w-full mx-auto my-12">

@@ -3,9 +3,9 @@ import { FaFileVideo } from "react-icons/fa";
 
 const HomeCategories = () => {
   const Categories = [
-    { id: 1, title: "Wardrobe" },
-    { id: 2, title: "NightStands" },
-    { id: 3, title: "Chest of Drawers" },
+    { id: 1, title: "Printing" },
+    { id: 2, title: "Rennovation" },
+    { id: 3, title: "Wall Decor" },
     
   ];
 

@@ -125,6 +125,7 @@ import ContactUs from "./FootersPages/ContactUs";
 
 import About from "./FootersPages/About";
 import SearchResults from "./components/SearchResults";
+import { Grid } from "lucide-react";
 
 
 
@@ -1021,6 +1022,15 @@ const App = () => {
                   element={
                   <PageLayout>
                     <About/>
+          
+                  </PageLayout>
+                  }
+                />
+                  <Route
+                  path="/grid"
+                  element={
+                  <PageLayout>
+               <Grid/>
           
                   </PageLayout>
                   }
