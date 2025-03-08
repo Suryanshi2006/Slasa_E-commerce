@@ -13,8 +13,61 @@ import { useVouchers } from "../context/VoucherContext";
 import { usePackages } from "../context/PackageContext";
 import { CultProvider, cultData } from "../context/CultContext"; // ✅ Import CultProvider & cultData
 import Footer from "../components/Footer";
+import Grid from "../components/Grid";
+import ImageCarousel from "../components/ImageCarousel";
 
 const Acrylic = () => {
+  
+  const sectionsData = [
+    {
+      title: "Pick up where you left off",
+      items: [
+        { image: "/Images/Acrylic1.avif", alt: "Item 1", caption: "Acrylic Triangle shape..." },
+        { image: "/Images/Acrylic2.jpeg", alt: "Item 2", caption: "Canvas Decor..." },
+        { image: "/Images/Exclusive21.jpeg", alt: "Item 3", caption: "Wall Decor..." },
+        { image: "/Images/Exclusive15.jpeg", alt: "Item 4", caption: "Canvas Art..." },
+      ],
+      linkText: "See more",
+      linkHref: "#"
+    },
+    {
+      title: "Continue shopping deals",
+      items: [
+        { image: "/Images/Exclusive5.jpeg", alt: "Model 1" },
+        { image: "/Images/Exclusive4.jpeg", alt: "Model 2" },
+        { image: "/Images/Exclusive6.jpeg", alt: "Model 3" },
+        { image: "/Images/Exclusive2.jpeg", alt: "Model 4" },
+      ],
+      linkText: "See all deals",
+      linkHref: "#"
+    },
+    {
+      title: "Buy again",
+      items: [
+        { image: "/Images/Exclusive.jpeg", alt: "Tide" },
+        { image: "/Images/Exclusive7.jpeg", alt: "Trimmer" },
+        { image: "/Images/Exclusive9.jpeg", alt: "Lotion" },
+        { image: "/Images/Exclusive9.jpeg", alt: "Lotion" },
+      ],
+      linkText: "More in Buy Again",
+      linkHref: "#"
+    },
+    {
+      title: "Get bulk discounts",
+      items: [{ image: "/Images/Exclusive22.jpeg", alt: "Amazon Business", caption: "+ Top B2B deals !!" }],
+      specialLayout: "bulkDiscounts"
+    },
+    {
+      title: "Wall Decor",
+      items: [
+        { image: "/Images/Exclusive23.jpeg", alt: "Decor 1", caption: "The Beautiful Decor for your Beautiful wall", discountPrice: "-4% ₹42,9.00", originalPrice: "M.R.P: ₹44,9.00" },
+        { image: "/Images/Exclusive22.jpeg", alt: "Decor 2" },
+        { image: "/Images/Exclusive27.jpeg", alt: "Decor 3" },
+        { image: "/Images/Exclusive29.jpeg", alt: "Decor 4" },
+      ],
+      specialLayout: "highlightDeal"
+    }
+  ];
   const {
     voucherData,
     constructionVoucher,
@@ -40,6 +93,23 @@ const Acrylic = () => {
   const description =
     "Explore our wide range of stylish and durable acrylic accessories for your home and office decor.";
 
+    const viewedItems = [
+      "/Images/Exclusive.jpeg",
+      "/Images/Exclusive29.jpeg",
+      "/Images/Exclusive27.jpeg",
+      "/Images/Exclusive22.jpeg",
+      "/Images/Exclusive21.jpeg",
+    ];
+  
+    const shoppingTrends = [
+      "/Images/Exclusive17.jpeg",
+      "/Images/Exclusive16.jpeg",
+      "/Images/Exclusive13.jpeg",
+      "/Images/Exclusive7.jpeg",
+      "/Images/Exclusive9.jpeg",
+      "/Images/Exclusive4.jpeg",
+      "/Images/Exclusive9.jpeg",
+    ];
   return (
     <>
       <div >
@@ -58,6 +128,9 @@ const Acrylic = () => {
   buttonLink="/explore"
  
 />
+<Grid sections={sectionsData} />
+<ImageCarousel title="Related to items you've viewed" images={viewedItems} />
+<ImageCarousel title="Inspired by your shopping trends" images={shoppingTrends} />
 
         <ProductSection title={title} description={description} className="mt-20" />
 
