@@ -5,7 +5,7 @@ const HeaderTop = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
 
   return (
-    <div className="relative bg-black text-white py-4 px-4 flex items-center flex-wrap overflow-visible z-40">
+    <div className="relative bg-black text-white py-px px-4 flex items-center flex-wrap overflow-visible z-40">
       {/* Left Section (Hide on smaller screens) */}
       <div className="hidden sm:flex items-center gap-4 flex-wrap">
         {/* Free Shipping */}

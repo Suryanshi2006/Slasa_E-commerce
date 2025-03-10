@@ -33,7 +33,9 @@ html, body {
   padding: 20px;
   flex-shrink: 0; /* Prevents shrinking */
   z-index: 10;
-  overflow-y: auto; /* Allows scrolling if sidebar content overflows */
+  overflow-y: auto;
+ 
+   /* Allows scrolling if sidebar content overflows */
 }
 
 /* Main content area */

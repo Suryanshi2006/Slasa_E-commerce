@@ -58,7 +58,7 @@ const PageLayout = ({ children }) => {
         )}
 
         {/* Page Content - Full Width */}
-        <div className="w-full px-0 md:px-0 lg:px-0 xl:px-0 pt-[230px]">
+        <div className="w-full px-0 md:px-0 lg:px-0 xl:px-0 pt-[170px]">
           {children}
         </div>
       </div>
