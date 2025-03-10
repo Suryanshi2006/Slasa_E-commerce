@@ -51,19 +51,19 @@ const HeaderNav = () => {
   };
 
   return (
-    <header className="bg-gray-900 text-white px-4 py-3 overflow-hidden">
+    <header className="bg-white  px-20  overflow-hidden">
       <div className="flex items-center justify-between max-w-[1400px] mx-auto flex-wrap">
         {/* Logo */}
-        <div className="flex items-centerpx-4 py-2  rounded-md shadow-md cursor-pointer">
-          <img src="/Images/SLASA.svg" alt="Logo" className="!h-17 w-35 object-cover " />
+        <div className="flex items-center py-2 px-2  rounded-md  cursor-pointer">
+          <img src="/Images/slasaLogo.svg" alt="Logo" className="h-15 w-35  object-contain"/>
         </div>
 
         <div className="flex justify-center w-full md:w-auto mt-3 md:mt-0 gap-x-4 flex-grow">
-          <div className="flex items-center bg-white rounded-md overflow-hidden w-full sm:w-[300px] md:w-[350px] lg:w-[600px] max-w-[550px] border border-gray-300 shadow-md transition-all duration-300 hover:shadow-lg">
+          <div className="flex items-center bg-white rounded-md overflow-hidden w-full sm:w-[300px] md:w-[350px] lg:w-[600px] max-w-[550px] border border-white shadow-md transition-all duration-300 hover:shadow-lg">
             {/* Category Dropdown */}
             <div className="relative">
               <select
-                className="text-xs px-4 h-12 py-2 border-r border-gray-400 outline-none cursor-pointer transition-all duration-300 hover:bg-blue-600 hover:text-white"
+                className="text-md px-4 h-12 py-2 border-r border-white outline-none cursor-pointer transition-all duration-300 hover:bg-[#3087d1] hover:text-white"
                 style={{ backgroundColor: "#3087d1", width: `${selectWidth}px` }}
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
@@ -102,31 +102,7 @@ const HeaderNav = () => {
 
         {/* User Options */}
         <div className="flex items-center gap-4">
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={handleSignIn}
-            className="flex flex-col items-center cursor-pointer border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200"
-          >
-            <FaUser className="text-lg" />
-            <span>{user ? "Profile" : "Sign In"}</span>
-          </div>
-
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={() => navigate("/cart")}
-            className="flex flex-col items-center cursor-pointer relative border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200"
-          >
-            <FaShoppingCart className="text-xl" />
-            {cartItems > 0 && (
-              <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs px-1 rounded-full">
-                {cartItems}
-              </span>
-            )}
-            <span>Cart</span>
-          </div>
-
+         
           <div
             role="button"
             tabIndex={0}
@@ -137,10 +113,38 @@ const HeaderNav = () => {
             <span>Wishlist</span>
           </div>
 
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => navigate("/cart")}
+            className="flex flex-col items-center cursor-pointer relative border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200"
+          >
+            
+            <FaShoppingCart className="text-xl" />
+            {cartItems > 0 && (
+              <span className="absolute -top-1 -right-2 bg-red-600 !text-black text-xs px-1 rounded-full">
+                {cartItems}
+              </span>
+            )}
+            <span>Cart</span>
+          </div>
           <div className="hidden sm:flex flex-col items-center cursor-pointer border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200">
             <FaGlobe className="text-lg" />
             <span>EN</span>
           </div>
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={handleSignIn}
+            className="flex flex-col items-center cursor-pointer border border-transparent hover:border-blue-400 rounded-md p-2 transition duration-200"
+          >
+            <FaUser className="text-lg" />
+            <span>{user ? "Profile" : "Sign In"}</span>
+          </div>
+
+         
+
+         
         </div>
       </div>
     </header>
@@ -148,3 +152,4 @@ const HeaderNav = () => {
 };
 
 export default HeaderNav;
+

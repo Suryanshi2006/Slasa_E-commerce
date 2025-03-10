@@ -37,7 +37,9 @@ const SideMenu = ({ isOpen, onClose }) => {
       style={{
         ...styles.sideMenu,
         transform: isOpen ? "translateX(0)" : "translateX(-100%)",
+      
       }}
+      className="text-2xl"
     >
       <div style={styles.closeButton} onClick={onClose}>
         &#10006;
@@ -46,7 +48,7 @@ const SideMenu = ({ isOpen, onClose }) => {
         <h2> 👨🏻 Hello, Sign In</h2>
       </div>
 
-      <MenuSection title="Trending">
+      <MenuSection title="Trending" className='text-2xl'>
         <ExpandableMenu
           title="Best Sellers ✨"
           isOpen={openSections.sellers}

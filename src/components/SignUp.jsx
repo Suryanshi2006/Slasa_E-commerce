@@ -111,7 +111,7 @@ const SignUp = () => {
           </div>
 
           {/* Terms and Conditions Checkbox */}
-          <div className="flex items-center mb-6">
+          <div className="flex items-center mb-6 p-8">
             <label className="flex items-center text-sm text-gray-600">
               <input
                 type="checkbox"
