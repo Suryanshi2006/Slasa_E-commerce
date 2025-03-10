@@ -3,7 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import { VoucherProvider } from "./context/VoucherContext";
 import { PackageProvider } from "./context/PackageContext";
 import { PromotionProvider } from "./context/PromotionContext";
-import { CultProvider } from "./context/CultContext"; // ✅ Import PromotionProvider
+import { CultProvider } from "./context/CultContext";
+import { AuthProvider } from "./context/Authcontext";
+import { useAuth } from "./context/Authcontext"; // ✅ Import PromotionProvider
 
 import Home from "./pages/Home";
 import SignIn from "./components/SignIn";
@@ -126,8 +128,7 @@ import SearchResults from "./components/SearchResults";
 import { Grid } from "lucide-react";
 import Privacy from "./FootersPages/Privacy";
 import SellwithUs from "./FootersPages/SellwithUs";
-import { AuthProvider } from "./context/Authcontext";
-import { useAuth } from "./context/Authcontext";
+
 import { Navigate } from "react-router-dom"; // Add this if missing
 
 
