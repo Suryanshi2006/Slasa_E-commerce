@@ -4,8 +4,8 @@ import { VoucherProvider } from "./context/VoucherContext";
 import { PackageProvider } from "./context/PackageContext";
 import { PromotionProvider } from "./context/PromotionContext";
 import { CultProvider } from "./context/CultContext";
-import { AuthProvider } from "./context/Authcontext";
-import { useAuth } from "./context/Authcontext"; // ✅ Import PromotionProvider
+import { AuthProvider } from "./context/AuthContext";
+import { useAuth } from "./context/AuthContext"; // ✅ Import PromotionProvider
 
 import Home from "./pages/Home";
 import SignIn from "./components/SignIn";
